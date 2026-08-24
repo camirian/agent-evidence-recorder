@@ -1,0 +1,120 @@
+{
+  "files": [
+    {
+      "additions": 4,
+      "changes": 4,
+      "deletions": 0,
+      "patch_excerpt": [
+        "@@ -187,6 +187,7 @@ metadata:",
+        " agent_evidence-recorder pr-review --repo camirian/agent_evidence-recorder --pr 19",
+        " agent_evidence-recorder verify-pr-review --bundle-dir agent_evidence-pr-review",
+        " agent_evidence-recorder inspect-pr-review --bundle-dir agent_evidence-pr-review",
+        "+agent_evidence-recorder verify-review-outcome --bundle-dir agent_evidence-pr-review"
+      ],
+      "patch_line_count": 5,
+      "patch_present": true,
+      "patch_truncated": false,
+      "path": "QUICKSTART.md",
+      "status": "modified"
+    },
+    {
+      "additions": 5,
+      "changes": 5,
+      "deletions": 0,
+      "patch_excerpt": [
+        "@@ -135,6 +135,7 @@ GitHub CLI:",
+        " agent_evidence-recorder pr-review --repo camirian/agent_evidence-recorder --pr 19",
+        " agent_evidence-recorder verify-pr-review --bundle-dir agent_evidence-pr-review",
+        " agent_evidence-recorder inspect-pr-review --bundle-dir agent_evidence-pr-review",
+        "+agent_evidence-recorder verify-review-outcome --bundle-dir agent_evidence-pr-review"
+      ],
+      "patch_line_count": 5,
+      "patch_present": true,
+      "patch_truncated": false,
+      "path": "README.md",
+      "status": "modified"
+    },
+    {
+      "additions": 16,
+      "changes": 17,
+      "deletions": 1,
+      "patch_excerpt": [
+        "@@ -46,6 +47,19 @@ packet.",
+        "+After review, validate the filled outcome worksheet:",
+        "+",
+        "+```bash",
+        "+agent_evidence-recorder verify-review-outcome --bundle-dir agent_evidence-pr-review",
+        "+```",
+        "+",
+        "+This command expects `reviewer_decision` to be one of `accept`, `reject`,",
+        "+`request_changes`, or `needs_followup`."
+      ],
+      "patch_line_count": 9,
+      "patch_present": true,
+      "patch_truncated": false,
+      "path": "docs/GITHUB_PR_REVIEW_BUNDLE.md",
+      "status": "modified"
+    },
+    {
+      "additions": 14,
+      "changes": 14,
+      "deletions": 0,
+      "patch_excerpt": [
+        "@@ -42,6 +43,15 @@ def main() -> int:",
+        "+    verify_review_outcome = subcommands.add_parser(",
+        "+        \"verify-review-outcome\",",
+        "+        help=\"verify a filled PR review outcome worksheet\",",
+        "+    )"
+      ],
+      "patch_line_count": 5,
+      "patch_present": true,
+      "patch_truncated": false,
+      "path": "agent_evidence_recorder/__main__.py",
+      "status": "modified"
+    },
+    {
+      "additions": 77,
+      "changes": 79,
+      "deletions": 2,
+      "patch_excerpt": [
+        "@@ -224,6 +228,77 @@ def verify_pr_review_bundle(bundle_dir: Path) -> dict[str, Any]:",
+        "+def verify_recorded_review_outcome(bundle_dir: Path) -> dict[str, Any]:",
+        "+    checks: list[dict[str, Any]] = []",
+        "+    bundle_report = verify_pr_review_bundle(bundle_dir)",
+        "+    bundle_failures = [check for check in bundle_report[\"checks\"] if not check[\"passed\"]]"
+      ],
+      "patch_line_count": 5,
+      "patch_present": true,
+      "patch_truncated": false,
+      "path": "agent_evidence_recorder/pr_review.py",
+      "status": "modified"
+    },
+    {
+      "additions": 108,
+      "changes": 109,
+      "deletions": 1,
+      "patch_excerpt": [
+        "@@ -367,6 +367,108 @@ class PublicSampleTests(unittest.TestCase):",
+        "+    def test_verify_recorded_review_outcome_accepts_filled_low_risk_outcome(self) -> None:",
+        "+        report = verify_recorded_review_outcome(output_dir)",
+        "+        self.assertTrue(report[\"passed\"], report)"
+      ],
+      "patch_line_count": 4,
+      "patch_present": true,
+      "patch_truncated": false,
+      "path": "tests/test_sample.py",
+      "status": "modified"
+    }
+  ],
+  "limits": {
+    "max_files": 12,
+    "max_patch_lines_per_file": 80
+  },
+  "schema_version": "agent_evidence_recorder.pr_review.v0",
+  "summary": {
+    "files_omitted": 0,
+    "files_with_patch": 6,
+    "files_without_patch": 0,
+    "patches_truncated": 0
+  }
+}

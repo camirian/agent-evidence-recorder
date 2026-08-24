@@ -1,0 +1,12 @@
+{
+  "public_safety": {
+    "artifact_surface": "public_sample",
+    "data_boundary": "synthetic",
+    "external_effects": "blocked_non_file_effects_only",
+    "live_adapter": false,
+    "path_mode": "relative_only",
+    "rollback_scope": "git_tracked_files_only"
+  },
+  "run_id": "agent_evidence-sample-run",
+  "schema_version": "agent_evidence_recorder.public_sample.v0"
+}

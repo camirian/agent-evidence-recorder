@@ -1,0 +1,66 @@
+{
+  "artifacts": [
+    {
+      "bytes": 855,
+      "classification": "public_metadata",
+      "relative_path": "changed_files.json",
+      "sha256": "49723108e1c5affb8862c9ebfbf4c173791b589a480b8d290e101577d72c5422"
+    },
+    {
+      "bytes": 98,
+      "classification": "public_metadata",
+      "relative_path": "commands.log",
+      "sha256": "a6cabfdf1a2b0d94bb2e5aa4257b408e5c6fe8909d14910daf63fa264a3b4ebd"
+    },
+    {
+      "bytes": 3154,
+      "classification": "public_metadata",
+      "relative_path": "file_diffs.json",
+      "sha256": "828ca72345abacd18c5e4d98d755b86bd76e523f4c8e62fd214d99984e90c572"
+    },
+    {
+      "bytes": 674,
+      "classification": "public_metadata",
+      "relative_path": "pr_metadata.json",
+      "sha256": "d285a6c53c72e290f8dfc568f981d9286d3e6feaf83d94a5e96c979dde66314b"
+    },
+    {
+      "bytes": 1039,
+      "classification": "public_metadata",
+      "relative_path": "review_outcome.json",
+      "sha256": "f060b9dcdddf7f170aefb92f70f66810452fa004981b33a3ec52b4318b8aa95d"
+    },
+    {
+      "bytes": 1140,
+      "classification": "public_metadata",
+      "relative_path": "review_request.md",
+      "sha256": "9b65145ea562c6ff453eff24fd0181c2abf5b220caddfa00138689dae1298bc6"
+    },
+    {
+      "bytes": 3804,
+      "classification": "public_metadata",
+      "relative_path": "reviewer_packet.md",
+      "sha256": "58ca297f0cd7cc81712537dd0f0ee7f2c7041bb9730109ebf3fcd4db3133dd01"
+    },
+    {
+      "bytes": 709,
+      "classification": "public_metadata",
+      "relative_path": "risk_summary.json",
+      "sha256": "535b9e30fec9d16b7e3d4c491e54509f97809a6b80ebceace90702620c90e62b"
+    },
+    {
+      "bytes": 866,
+      "classification": "public_metadata",
+      "relative_path": "run_record.json",
+      "sha256": "10852b93cabc1490eab0d866ddb6f8b16cb5425f9e4dced4821c9112a4221e57"
+    },
+    {
+      "bytes": 155,
+      "classification": "public_metadata",
+      "relative_path": "status_checks.json",
+      "sha256": "965e1e291faa34f19ed9e2b9c3709ffb5d2e4f4a959adb6ffc7386ef2fa48277"
+    }
+  ],
+  "generated_at": "2026-05-25T00:00:00Z",
+  "schema_version": "agent_evidence_recorder.pr_review.v0"
+}

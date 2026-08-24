@@ -1,0 +1,17 @@
+{
+  "commands": [
+    {
+      "command": [
+        "python3",
+        "-B",
+        "-m",
+        "unittest",
+        "test_calculator.py"
+      ],
+      "cwd": "sample-target-repo",
+      "returncode": 1,
+      "stderr_summary": "",
+      "stdout_summary": "1 test failed as expected for rejected sample"
+    }
+  ]
+}

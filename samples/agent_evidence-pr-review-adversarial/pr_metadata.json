@@ -1,0 +1,21 @@
+{
+  "additions": 42,
+  "author": "camirian",
+  "base_ref": "main",
+  "body": "Update several files.",
+  "changed_files": 3,
+  "commit_count": 1,
+  "created_at": "2026-06-01T05:10:00Z",
+  "deletions": 7,
+  "generated_at": "2026-06-01T05:15:00+00:00",
+  "head_ref": "feature/risky-green-pr",
+  "number": 39,
+  "repo": "camirian/agent_evidence-recorder",
+  "review_decision": "",
+  "schema_version": "agent_evidence_recorder.pr_review.v0",
+  "state": "OPEN",
+  "status_check_count": 2,
+  "title": "Update",
+  "updated_at": "2026-06-01T05:15:00Z",
+  "url": "https://github.com/camirian/agent_evidence-recorder/pull/39"
+}

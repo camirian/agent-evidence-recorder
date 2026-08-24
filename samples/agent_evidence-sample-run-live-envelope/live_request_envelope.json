@@ -1,0 +1,89 @@
+{
+  "allowed_effects": [
+    "read",
+    "modify",
+    "create",
+    "no-op"
+  ],
+  "allowed_input_refs": [
+    "samples/sample-target-repo/README.md",
+    "samples/sample-target-repo/calculator.py",
+    "samples/sample-target-repo/test_calculator.py"
+  ],
+  "cost_budget": {
+    "actual": 0,
+    "maximum": 0,
+    "provider_account_required": false,
+    "unit": "synthetic_provider_tokens"
+  },
+  "disallowed_effects": [
+    "network_call",
+    "deploy",
+    "publish"
+  ],
+  "disallowed_input_refs": [
+    "samples/sample-target-repo/[REDACTED_LOCAL_PATH]/credentials",
+    "[REDACTED_SECRET]",
+    "Customer: ACME_CORP_ORDERS_DUMP=abc123",
+    "[REDACTED_LOCAL_FILE]"
+  ],
+  "effect_boundary": {
+    "allowed_effects": [
+      "read_file",
+      "create_file",
+      "modify_file",
+      "no_op"
+    ],
+    "boundary_type": "file_scoped_synthetic",
+    "disallowed_effects": [
+      "network_call",
+      "external_api_call",
+      "deploy",
+      "publish",
+      "browser_automation",
+      "cloud_operation",
+      "hardware_access",
+      "payment"
+    ],
+    "external_effects_rollbackable": false,
+    "non_file_effects_allowed": false,
+    "observed_effects": [
+      {
+        "effect_type": "modify_file",
+        "file_scoped": true,
+        "path": "network_plan.txt",
+        "rollback_scope": "recorded_git_diff"
+      }
+    ],
+    "provider_calls_allowed": false,
+    "requested_non_file_effects": [
+      {
+        "effect_type": "network_call",
+        "reason": "input_preflight_blocked_before_provider_request",
+        "source": "live_request_envelope.json",
+        "status": "blocked"
+      }
+    ],
+    "reviewer_must_block_non_file_effects": true,
+    "rollback_scope": "recorded_git_diff_only",
+    "schema_version": "agent_evidence_recorder.effect_boundary.v0"
+  },
+  "evidence_export_target": "samples/agent_evidence-sample-run-live-envelope",
+  "normalized_evidence_refs": [
+    "sample-target-repo/calculator.py",
+    "agent_evidence-recorder sample run"
+  ],
+  "provider_request_simulation": {
+    "rejection_reason": "input_violations_present",
+    "status": "not_sent"
+  },
+  "redaction_profile": "agent_evidence_live_adapter_preflight_v0",
+  "reviewer_outcome_required": true,
+  "rollback_scope": "git_tracked_files_only",
+  "run_id": "agent_evidence-sample-run-live-envelope",
+  "schema_version": "agent_evidence_recorder.live_envelope.v0",
+  "task_description": "Improve calculator behavior for synthetic review and export.",
+  "task_id": "agent_evidence-sample-run-live-envelope-request-001",
+  "timeout_seconds": 30,
+  "working_root_label": "samples/sample-target-repo"
+}

@@ -1,0 +1,59 @@
+{
+  "artifact_manifest_ref": "agent-run-receipt.codex.artifact_manifest.json",
+  "artifacts_created": [
+    "agent_run_receipt.json",
+    "evidence_packet.md",
+    "review_packet.md"
+  ],
+  "commands_run": [
+    "python3 -m unittest tests.test_agent_run_receipt",
+    "python3 -m agent_evidence_recorder verify-agent-run-receipts",
+    "git diff --check"
+  ],
+  "completion_tokens_estimated": 3000,
+  "cost_confidence": "low",
+  "cost_source": "static_fixture_estimate",
+  "estimated_cost_usd": 0.09,
+  "evidence_packet_ref": "agent-run-receipt.codex.evidence_packet.md",
+  "files_changed": [
+    "agent_evidence_recorder/agent_run_receipt.py",
+    "tests/test_agent_run_receipt.py"
+  ],
+  "model": "synthetic-model-estimate",
+  "next_run_recommendations": [
+    "Keep receipt scoring deterministic.",
+    "Compare receipt warnings against reviewer packet gaps before trusting the score."
+  ],
+  "non_claims": [
+    "not a billing ledger",
+    "not a provider usage report",
+    "not a scientific benchmark",
+    "not a compliance score",
+    "not an ROI claim",
+    "not telemetry",
+    "not a model comparison"
+  ],
+  "privacy_boundary": "public_synthetic_fixture_only",
+  "prompt_body_policy": "excluded_by_default",
+  "prompt_tokens_estimated": 12000,
+  "receipt_id": "agent-run-receipt-codex",
+  "repo": "agent_evidence-recorder-public-sample",
+  "review_packet_ref": "agent-run-receipt.codex.review_packet.md",
+  "run_id": "synthetic-agent-run-verified-001",
+  "schema_version": "agent_evidence_recorder.agent_run_receipt.v0.1",
+  "task_class": "verified_coding_run",
+  "task_summary": "Synthetic agent run adds a deterministic receipt validator and local tests.",
+  "tests_run": [
+    "tests.test_agent_run_receipt.AgentRunReceiptTests.test_tracked_receipts_verify",
+    "tests.test_agent_run_receipt.AgentRunReceiptTests.test_score_is_deterministic"
+  ],
+  "token_efficiency_score": 100.0,
+  "tool": "synthetic-coding-agent",
+  "total_tokens_estimated": 15000,
+  "verification_refs": [
+    "agent-run-receipt.codex.verification.json"
+  ],
+  "verification_status": "verified",
+  "verified_output_per_1m_tokens": 5600.0,
+  "waste_flags": []
+}

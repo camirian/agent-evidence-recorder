@@ -1,0 +1,9 @@
+{"adapter": "synthetic_sample", "event": "run_started", "run_id": "agent_evidence-sample-run-live-envelope"}
+{"event": "fixture_created", "run_id": "agent_evidence-sample-run-live-envelope", "target": "sample-target-repo"}
+{"changed_files": ["network_plan.txt"], "event": "modeled_edit_applied", "mode": "live_envelope", "run_id": "agent_evidence-sample-run-live-envelope"}
+{"cost_budget_maximum": 0, "event": "execution_limits_recorded", "run_id": "agent_evidence-sample-run-live-envelope", "timeout_seconds": 30}
+{"event": "failure_capture_recorded", "failure_class": "input_rejected", "run_id": "agent_evidence-sample-run-live-envelope"}
+{"event": "verification_completed", "final_status": "blocked", "run_id": "agent_evidence-sample-run-live-envelope"}
+{"event": "policy_gate_completed", "final_status": "blocked", "run_id": "agent_evidence-sample-run-live-envelope"}
+{"artifacts": ["run_record.json", "trace.jsonl", "commands.log", "git.diff", "sample_verification.json", "sample_policy.json", "policy_gate_report.json", "human_escalation_record.json", "loop_stage_summary.json", "kill_switch_boundary.md", "evidence_packet.md", "review_packet.md", "rollback.sh", "live_request_envelope.json", "live_redaction_report.json", "provider_request_rejection_record.json"], "event": "artifacts_written", "run_id": "agent_evidence-sample-run-live-envelope"}
+{"event": "provider_request_rejected", "provider_request_sent": false, "redactions_reported": true, "run_id": "agent_evidence-sample-run-live-envelope"}

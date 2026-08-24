@@ -1,0 +1,35 @@
+{
+  "additions": 42,
+  "adversarial_traps": [
+    "sensitive_pr_surface_requires_review",
+    "vague_pr_intent_blocks_review_judgment"
+  ],
+  "changed_file_count": 3,
+  "deletions": 7,
+  "file_diff_summary": {
+    "files_omitted": 0,
+    "files_with_patch": 3,
+    "files_without_patch": 0,
+    "patches_truncated": 0
+  },
+  "recommended_action": "inspect reviewer_packet.md before trusting this PR",
+  "reported_changed_file_count": 3,
+  "review_decision": "",
+  "risk_flags": [
+    "ci_or_automation",
+    "documentation",
+    "security_or_policy",
+    "source_code"
+  ],
+  "risk_level": "needs_review",
+  "risk_reasons": [
+    "high_risk_file_class_changed",
+    "intent_too_vague_for_review"
+  ],
+  "schema_version": "agent_evidence_recorder.pr_review.v0",
+  "status_check_count": 2,
+  "status_check_results": {
+    "success": 2
+  },
+  "status_check_risk_flags": []
+}

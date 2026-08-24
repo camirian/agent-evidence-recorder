@@ -1,0 +1,91 @@
+{
+  "allowed_actions": [
+    "tracked fixture source edit",
+    "local fixture verification",
+    "evidence artifact generation"
+  ],
+  "effect_boundary": {
+    "allowed_effects": [
+      "read_file",
+      "create_file",
+      "modify_file",
+      "no_op"
+    ],
+    "boundary_type": "file_scoped_synthetic",
+    "disallowed_effects": [
+      "network_call",
+      "external_api_call",
+      "deploy",
+      "publish",
+      "browser_automation",
+      "cloud_operation",
+      "hardware_access",
+      "payment"
+    ],
+    "external_effects_rollbackable": false,
+    "non_file_effects_allowed": false,
+    "observed_effects": [
+      {
+        "effect_type": "modify_file",
+        "file_scoped": true,
+        "path": "calculator.py",
+        "rollback_scope": "recorded_git_diff"
+      },
+      {
+        "effect_type": "modify_file",
+        "file_scoped": true,
+        "path": "README.md",
+        "rollback_scope": "recorded_git_diff"
+      }
+    ],
+    "provider_calls_allowed": false,
+    "requested_non_file_effects": [],
+    "reviewer_must_block_non_file_effects": true,
+    "rollback_scope": "recorded_git_diff_only",
+    "schema_version": "agent_evidence_recorder.effect_boundary.v0"
+  },
+  "escalations": [
+    {
+      "observed_field": "run_record.intent",
+      "required_reviewer_action": "Narrow the intent enough to compare it against the diff.",
+      "trigger": "intent_too_broad"
+    },
+    {
+      "observed_file": "README.md",
+      "required_reviewer_action": "Confirm whether the documentation change supports the stated intent.",
+      "trigger": "unrelated_diff_possible"
+    },
+    {
+      "observed_artifact": "artifact_manifest.json",
+      "required_reviewer_action": "Confirm artifact hashes and roles are sufficient for review judgment.",
+      "trigger": "weak_provenance"
+    },
+    {
+      "observed_artifact": "review_packet.md",
+      "required_reviewer_action": "Confirm review packet claims agree with sample_verification.json.",
+      "trigger": "stale_evidence_risk"
+    }
+  ],
+  "final_policy_status": "needs_human_review",
+  "forbidden_actions": [
+    "network_call_plan",
+    "live provider execution",
+    "non-synthetic data access"
+  ],
+  "observed_actions": [
+    {
+      "path": "calculator.py",
+      "type": "changed_file"
+    },
+    {
+      "path": "README.md",
+      "type": "changed_file"
+    }
+  ],
+  "policy_gate_id": "agent_evidence-recorder-public-sample-policy-gate",
+  "policy_name": "Synthetic agent-run evidence gate",
+  "run_id": "agent_evidence-sample-run-vague",
+  "schema_version": "agent_evidence_recorder.public_sample.v0",
+  "violations": [],
+  "warnings": []
+}

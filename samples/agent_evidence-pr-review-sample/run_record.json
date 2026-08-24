@@ -1,0 +1,32 @@
+{
+  "adapter": "github_pr_review",
+  "boundary": "public GitHub PR metadata only; no local secrets or private repository contents",
+  "final_status": "needs_human_review",
+  "generated_at": "2026-05-25T00:00:00Z",
+  "input_artifacts": [
+    "GitHub PR metadata from gh CLI"
+  ],
+  "intent": "Review PR #24: Add PR review bundle verifier",
+  "output_artifacts": [
+    "pr_metadata.json",
+    "changed_files.json",
+    "file_diffs.json",
+    "status_checks.json",
+    "risk_summary.json",
+    "review_outcome.json",
+    "review_request.md",
+    "reviewer_packet.md",
+    "commands.log",
+    "artifact_manifest.json"
+  ],
+  "provenance": "github_pr_review",
+  "schema_version": "agent_evidence_recorder.pr_review.v0",
+  "source_command": [
+    "agent_evidence-recorder",
+    "pr-review",
+    "--repo",
+    "camirian/agent_evidence-recorder",
+    "--pr",
+    "24"
+  ]
+}

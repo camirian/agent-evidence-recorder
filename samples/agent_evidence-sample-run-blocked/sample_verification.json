@@ -1,0 +1,31 @@
+{
+  "checks": [
+    {
+      "name": "synthetic_adapter",
+      "passed": true
+    },
+    {
+      "name": "final_status_expected",
+      "passed": true
+    },
+    {
+      "name": "policy_status_expected",
+      "passed": true
+    },
+    {
+      "name": "verification_pass_not_enough_for_policy_hold",
+      "passed": true
+    },
+    {
+      "name": "relative_paths_only",
+      "passed": true
+    },
+    {
+      "name": "rollback_scope_limited",
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "run_id": "agent_evidence-sample-run-blocked",
+  "schema_version": "agent_evidence_recorder.public_sample.v0"
+}

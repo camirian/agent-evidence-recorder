@@ -1,0 +1,15 @@
+{
+  "entries": [
+    {
+      "artifact_role": "evidence_packet",
+      "classification": "synthetic_fixture",
+      "relative_path": "agent-run-receipt.noop.evidence_packet.md"
+    },
+    {
+      "artifact_role": "review_packet",
+      "classification": "synthetic_fixture",
+      "relative_path": "agent-run-receipt.noop.review_packet.md"
+    }
+  ],
+  "schema_version": "agent_evidence_recorder.agent_run_receipt_manifest_fixture.v0.1"
+}

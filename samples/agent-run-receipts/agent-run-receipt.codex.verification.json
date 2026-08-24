@@ -1,0 +1,14 @@
+{
+  "checks": [
+    {
+      "name": "unit_tests_recorded",
+      "passed": true
+    },
+    {
+      "name": "review_packet_present",
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "schema_version": "agent_evidence_recorder.agent_run_receipt_verification_fixture.v0.1"
+}

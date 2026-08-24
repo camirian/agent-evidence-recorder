@@ -1,0 +1,285 @@
+{
+  "checks": [
+    {
+      "detail": "samples/agent_evidence-pr-review-adversarial",
+      "name": "bundle_directory_present",
+      "passed": true
+    },
+    {
+      "detail": "",
+      "name": "required_artifacts_present",
+      "passed": true
+    },
+    {
+      "detail": "agent_evidence_recorder.pr_review.v0",
+      "name": "manifest_schema",
+      "passed": true
+    },
+    {
+      "detail": "",
+      "name": "manifest_lists_required_artifacts",
+      "passed": true
+    },
+    {
+      "detail": "changed_files.json",
+      "name": "manifest:changed_files.json:sha256",
+      "passed": true
+    },
+    {
+      "detail": "changed_files.json",
+      "name": "manifest:changed_files.json:bytes",
+      "passed": true
+    },
+    {
+      "detail": "commands.log",
+      "name": "manifest:commands.log:sha256",
+      "passed": true
+    },
+    {
+      "detail": "commands.log",
+      "name": "manifest:commands.log:bytes",
+      "passed": true
+    },
+    {
+      "detail": "file_diffs.json",
+      "name": "manifest:file_diffs.json:sha256",
+      "passed": true
+    },
+    {
+      "detail": "file_diffs.json",
+      "name": "manifest:file_diffs.json:bytes",
+      "passed": true
+    },
+    {
+      "detail": "pr_metadata.json",
+      "name": "manifest:pr_metadata.json:sha256",
+      "passed": true
+    },
+    {
+      "detail": "pr_metadata.json",
+      "name": "manifest:pr_metadata.json:bytes",
+      "passed": true
+    },
+    {
+      "detail": "review_outcome.json",
+      "name": "manifest:review_outcome.json:sha256",
+      "passed": true
+    },
+    {
+      "detail": "review_outcome.json",
+      "name": "manifest:review_outcome.json:bytes",
+      "passed": true
+    },
+    {
+      "detail": "review_request.md",
+      "name": "manifest:review_request.md:sha256",
+      "passed": true
+    },
+    {
+      "detail": "review_request.md",
+      "name": "manifest:review_request.md:bytes",
+      "passed": true
+    },
+    {
+      "detail": "reviewer_packet.md",
+      "name": "manifest:reviewer_packet.md:sha256",
+      "passed": true
+    },
+    {
+      "detail": "reviewer_packet.md",
+      "name": "manifest:reviewer_packet.md:bytes",
+      "passed": true
+    },
+    {
+      "detail": "risk_summary.json",
+      "name": "manifest:risk_summary.json:sha256",
+      "passed": true
+    },
+    {
+      "detail": "risk_summary.json",
+      "name": "manifest:risk_summary.json:bytes",
+      "passed": true
+    },
+    {
+      "detail": "run_record.json",
+      "name": "manifest:run_record.json:sha256",
+      "passed": true
+    },
+    {
+      "detail": "run_record.json",
+      "name": "manifest:run_record.json:bytes",
+      "passed": true
+    },
+    {
+      "detail": "status_checks.json",
+      "name": "manifest:status_checks.json:sha256",
+      "passed": true
+    },
+    {
+      "detail": "status_checks.json",
+      "name": "manifest:status_checks.json:bytes",
+      "passed": true
+    },
+    {
+      "detail": "agent_evidence_recorder.pr_review.v0",
+      "name": "run_record_schema",
+      "passed": true
+    },
+    {
+      "detail": "github_pr_review",
+      "name": "run_record_adapter",
+      "passed": true
+    },
+    {
+      "detail": "",
+      "name": "run_record_outputs_required_artifacts",
+      "passed": true
+    },
+    {
+      "detail": "public GitHub PR metadata only; no local secrets or private repository contents",
+      "name": "run_record_boundary_public_metadata",
+      "passed": true
+    },
+    {
+      "detail": "needs_human_review",
+      "name": "run_record_final_status_allowed",
+      "passed": true
+    },
+    {
+      "detail": "agent_evidence_recorder.pr_review.v0",
+      "name": "pr_metadata_schema",
+      "passed": true
+    },
+    {
+      "detail": "",
+      "name": "pr_metadata_public_boundary",
+      "passed": true
+    },
+    {
+      "detail": "agent_evidence_recorder.pr_review.v0",
+      "name": "changed_files_schema",
+      "passed": true
+    },
+    {
+      "detail": "list",
+      "name": "changed_files_list",
+      "passed": true
+    },
+    {
+      "detail": "",
+      "name": "changed_files_paths_relative",
+      "passed": true
+    },
+    {
+      "detail": "agent_evidence_recorder.pr_review.v0",
+      "name": "file_diffs_schema",
+      "passed": true
+    },
+    {
+      "detail": "",
+      "name": "file_diffs_limits_present",
+      "passed": true
+    },
+    {
+      "detail": "",
+      "name": "file_diffs_summary_present",
+      "passed": true
+    },
+    {
+      "detail": "3",
+      "name": "file_diffs_file_limit_respected",
+      "passed": true
+    },
+    {
+      "detail": "",
+      "name": "file_diffs_patch_limit_respected",
+      "passed": true
+    },
+    {
+      "detail": "",
+      "name": "file_diffs_paths_relative",
+      "passed": true
+    },
+    {
+      "detail": "agent_evidence_recorder.pr_review.v0",
+      "name": "status_checks_schema",
+      "passed": true
+    },
+    {
+      "detail": "",
+      "name": "status_checks_summary_present",
+      "passed": true
+    },
+    {
+      "detail": "list",
+      "name": "status_checks_list",
+      "passed": true
+    },
+    {
+      "detail": "2",
+      "name": "status_checks_total_matches",
+      "passed": true
+    },
+    {
+      "detail": "agent_evidence_recorder.pr_review.v0",
+      "name": "risk_summary_schema",
+      "passed": true
+    },
+    {
+      "detail": "",
+      "name": "risk_summary_required_fields",
+      "passed": true
+    },
+    {
+      "detail": "needs_review",
+      "name": "risk_summary_level_allowed",
+      "passed": true
+    },
+    {
+      "detail": "agent_evidence_recorder.pr_review.v0",
+      "name": "review_outcome_schema",
+      "passed": true
+    },
+    {
+      "detail": "",
+      "name": "review_outcome_required_fields",
+      "passed": true
+    },
+    {
+      "detail": "unrecorded",
+      "name": "review_outcome_status_unrecorded",
+      "passed": true
+    },
+    {
+      "detail": "accept,reject,request_changes,needs_followup",
+      "name": "review_outcome_allowed_decisions",
+      "passed": true
+    },
+    {
+      "detail": "",
+      "name": "review_outcome_prompts_present",
+      "passed": true
+    },
+    {
+      "detail": "",
+      "name": "review_outcome_references_packet",
+      "passed": true
+    },
+    {
+      "detail": "",
+      "name": "review_request_has_sections",
+      "passed": true
+    },
+    {
+      "detail": "",
+      "name": "reviewer_packet_has_sections",
+      "passed": true
+    },
+    {
+      "detail": "",
+      "name": "commands_log_records_source",
+      "passed": true
+    }
+  ],
+  "passed": true
+}

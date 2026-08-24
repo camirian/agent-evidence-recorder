@@ -1,0 +1,24 @@
+{
+  "affected_artifacts": [
+    "policy_gate_report.json",
+    "git.diff",
+    "review_packet.md",
+    "kill_switch_boundary.md"
+  ],
+  "escalation_id": "agent_evidence-sample-run-escalated-human-escalation",
+  "non_claims": [
+    "No live agent authority is granted.",
+    "No external effect is rollbackable.",
+    "No production or customer workflow is authorized."
+  ],
+  "reason": "Policy-sensitive or forbidden behavior requires human disposition.",
+  "required_reviewer_action": "Decide whether to accept, reject, or request a narrower follow-up run.",
+  "run_id": "agent_evidence-sample-run-escalated",
+  "schema_version": "agent_evidence_recorder.public_sample.v0",
+  "suggested_decision_options": [
+    "accept",
+    "reject",
+    "escalate"
+  ],
+  "trigger": "needs_human_review"
+}

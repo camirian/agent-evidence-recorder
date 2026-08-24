@@ -1,0 +1,21 @@
+{
+  "additions": 3,
+  "author": "camirian",
+  "base_ref": "main",
+  "body": "Clarifies offline review wording in the quickstart without changing behavior.",
+  "changed_files": 1,
+  "commit_count": 1,
+  "created_at": "2026-06-01T05:20:00Z",
+  "deletions": 1,
+  "generated_at": "2026-06-01T05:22:00+00:00",
+  "head_ref": "docs/clarify-review-wording",
+  "number": 40,
+  "repo": "camirian/agent_evidence-recorder",
+  "review_decision": "",
+  "schema_version": "agent_evidence_recorder.pr_review.v0",
+  "state": "OPEN",
+  "status_check_count": 1,
+  "title": "Clarify quickstart review wording",
+  "updated_at": "2026-06-01T05:22:00Z",
+  "url": "https://github.com/camirian/agent_evidence-recorder/pull/40"
+}

@@ -1,0 +1,21 @@
+{
+  "checks": [
+    {
+      "conclusion": "success",
+      "name": "docs",
+      "result": "success",
+      "risk_flags": [],
+      "state": "",
+      "status": "completed",
+      "url": "https://github.com/camirian/agent_evidence-recorder/actions/runs/3"
+    }
+  ],
+  "schema_version": "agent_evidence_recorder.pr_review.v0",
+  "summary": {
+    "results": {
+      "success": 1
+    },
+    "risk_flags": [],
+    "total": 1
+  }
+}

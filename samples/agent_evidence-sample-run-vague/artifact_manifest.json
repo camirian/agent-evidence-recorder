@@ -1,0 +1,211 @@
+{
+  "entries": [
+    {
+      "artifact_role": "target_fixture",
+      "byte_size": 78,
+      "classification": "input",
+      "generated_by": "agent_evidence_recorder.sample",
+      "included_in_replay": true,
+      "included_in_rollback": false,
+      "relative_path": "README.md",
+      "root_label": "target_repo",
+      "sha256": "fc5f67b701e737c5627f16f4c676024d0dd6249b87af5cc8ecfdba9f9429fefa"
+    },
+    {
+      "artifact_role": "target_fixture",
+      "byte_size": 206,
+      "classification": "input",
+      "generated_by": "agent_evidence_recorder.sample",
+      "included_in_replay": true,
+      "included_in_rollback": false,
+      "relative_path": "agent_policy.json",
+      "root_label": "target_repo",
+      "sha256": "509db51448d33329da22a3b54ddf4ca83b01148eae1d949e84608d19f0ffc2b9"
+    },
+    {
+      "artifact_role": "target_fixture",
+      "byte_size": 99,
+      "classification": "input",
+      "generated_by": "agent_evidence_recorder.sample",
+      "included_in_replay": true,
+      "included_in_rollback": false,
+      "relative_path": "calculator.py",
+      "root_label": "target_repo",
+      "sha256": "6d5dce982dee6328b918f59f3715fd12166a6fccd83065be4333c7c5ba977713"
+    },
+    {
+      "artifact_role": "target_fixture",
+      "byte_size": 24,
+      "classification": "input",
+      "generated_by": "agent_evidence_recorder.sample",
+      "included_in_replay": true,
+      "included_in_rollback": false,
+      "relative_path": "network_plan.txt",
+      "root_label": "target_repo",
+      "sha256": "2f22da02d262315472cbc82617788c6470d1c408489d9ea6583a27589aac8234"
+    },
+    {
+      "artifact_role": "target_fixture",
+      "byte_size": 221,
+      "classification": "input",
+      "generated_by": "agent_evidence_recorder.sample",
+      "included_in_replay": true,
+      "included_in_rollback": false,
+      "relative_path": "test_calculator.py",
+      "root_label": "target_repo",
+      "sha256": "2e7ca35b98a9b110ef0e64e585a373b432899e91434ac2e4d1698d2faebc1198"
+    },
+    {
+      "artifact_role": "run_record",
+      "byte_size": 6345,
+      "classification": "generated",
+      "generated_by": "agent_evidence_recorder.sample",
+      "included_in_replay": true,
+      "included_in_rollback": false,
+      "relative_path": "run_record.json",
+      "root_label": "run_store",
+      "sha256": "928aa54980bcb88b584c3f472ce0e1d9c8bd47bdf4917aaaf075e23746151d72"
+    },
+    {
+      "artifact_role": "event_trace",
+      "byte_size": 1222,
+      "classification": "generated",
+      "generated_by": "agent_evidence_recorder.sample",
+      "included_in_replay": true,
+      "included_in_rollback": false,
+      "relative_path": "trace.jsonl",
+      "root_label": "run_store",
+      "sha256": "cecb095950377b86703923e2e91d9ad9a873f5a66a0f4727b927f021260babd7"
+    },
+    {
+      "artifact_role": "command_summary",
+      "byte_size": 286,
+      "classification": "generated",
+      "generated_by": "agent_evidence_recorder.sample",
+      "included_in_replay": true,
+      "included_in_rollback": false,
+      "relative_path": "commands.log",
+      "root_label": "run_store",
+      "sha256": "96df2c61e94ccd43cb7801d347f63731bd1f1f24612c6ebc3243dd8694feb5dc"
+    },
+    {
+      "artifact_role": "modeled_diff",
+      "byte_size": 454,
+      "classification": "generated",
+      "generated_by": "agent_evidence_recorder.sample",
+      "included_in_replay": true,
+      "included_in_rollback": true,
+      "relative_path": "git.diff",
+      "root_label": "run_store",
+      "sha256": "54edef7da0df543acd5fd756d60b0f603e25800cc2e502a3f0d05ecabee69c01"
+    },
+    {
+      "artifact_role": "verification_output",
+      "byte_size": 607,
+      "classification": "verification_output",
+      "generated_by": "agent_evidence_recorder.sample",
+      "included_in_replay": false,
+      "included_in_rollback": false,
+      "relative_path": "sample_verification.json",
+      "root_label": "run_store",
+      "sha256": "db4117396a5984338a709366894d4fc5495f64034bdca5644f04e1c4afe1159a"
+    },
+    {
+      "artifact_role": "policy_boundary",
+      "byte_size": 380,
+      "classification": "generated",
+      "generated_by": "agent_evidence_recorder.sample",
+      "included_in_replay": false,
+      "included_in_rollback": false,
+      "relative_path": "sample_policy.json",
+      "root_label": "run_store",
+      "sha256": "abd074901cefcbe2dab0eb5c23ce690a7ae8e31cedf67e5e77a9f9e1eba249bb"
+    },
+    {
+      "artifact_role": "policy_gate_report",
+      "byte_size": 2634,
+      "classification": "derived_report",
+      "generated_by": "agent_evidence_recorder.sample",
+      "included_in_replay": false,
+      "included_in_rollback": false,
+      "relative_path": "policy_gate_report.json",
+      "root_label": "run_store",
+      "sha256": "f2f59c3813157b7843a00299cb12b4291e4c7d5a242fa1da7004a90756be4d01"
+    },
+    {
+      "artifact_role": "human_escalation_record",
+      "byte_size": 785,
+      "classification": "derived_report",
+      "generated_by": "agent_evidence_recorder.sample",
+      "included_in_replay": false,
+      "included_in_rollback": false,
+      "relative_path": "human_escalation_record.json",
+      "root_label": "run_store",
+      "sha256": "87d0e6d6cf232a7ab5788de7f450439dcff8cdaa9c58780e1975447757a59d90"
+    },
+    {
+      "artifact_role": "loop_stage_summary",
+      "byte_size": 806,
+      "classification": "derived_report",
+      "generated_by": "agent_evidence_recorder.sample",
+      "included_in_replay": false,
+      "included_in_rollback": false,
+      "relative_path": "loop_stage_summary.json",
+      "root_label": "run_store",
+      "sha256": "2922ab2fd61560d06896a6f227d688f277fd765098ad2543c2c734811bf2d980"
+    },
+    {
+      "artifact_role": "kill_switch_boundary",
+      "byte_size": 689,
+      "classification": "review_surface",
+      "generated_by": "agent_evidence_recorder.sample",
+      "included_in_replay": false,
+      "included_in_rollback": false,
+      "relative_path": "kill_switch_boundary.md",
+      "root_label": "run_store",
+      "sha256": "8b5d73e1f26ff8d68b0628d755c34050f19857b570da4033f7a03662d8a9f0ab"
+    },
+    {
+      "artifact_role": "evidence_packet",
+      "byte_size": 1731,
+      "classification": "derived_report",
+      "generated_by": "agent_evidence_recorder.sample",
+      "included_in_replay": false,
+      "included_in_rollback": false,
+      "relative_path": "evidence_packet.md",
+      "root_label": "run_store",
+      "sha256": "4c2f638d3aef786dda7aa76fa4d74fbd49f2a308515f878979bd35557b3dd864"
+    },
+    {
+      "artifact_role": "review_packet",
+      "byte_size": 2154,
+      "classification": "review_surface",
+      "generated_by": "agent_evidence_recorder.sample",
+      "included_in_replay": false,
+      "included_in_rollback": false,
+      "relative_path": "review_packet.md",
+      "root_label": "run_store",
+      "sha256": "100d8ac20e9c2669a1ebbfc1cc42bb304f0323ac9200b6f80f4591c23ff1f69e"
+    },
+    {
+      "artifact_role": "rollback_script",
+      "byte_size": 658,
+      "classification": "generated",
+      "generated_by": "agent_evidence_recorder.sample",
+      "included_in_replay": false,
+      "included_in_rollback": false,
+      "relative_path": "rollback.sh",
+      "root_label": "run_store",
+      "sha256": "66a92f53a79ecd0a4405a7838b004c2796ecffacdef282c0e752bf34be5b79eb"
+    }
+  ],
+  "generated_at": "2026-05-25T00:00:00Z",
+  "manifest_policy": {
+    "excluded_self_referential_artifacts": [
+      "artifact_manifest.json"
+    ],
+    "hashes_after_redaction": true
+  },
+  "run_id": "agent_evidence-sample-run-vague",
+  "schema_version": "agent_evidence_recorder.public_sample.v0"
+}

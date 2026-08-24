@@ -1,0 +1,30 @@
+{
+  "artifact": "live_request_envelope.json",
+  "raw_sensitive_values_count": 0,
+  "raw_sensitive_values_exported": false,
+  "redaction_profile": "agent_evidence_live_adapter_preflight_v0",
+  "redaction_required_before_provider_request": true,
+  "redactions_applied": [
+    {
+      "count": 1,
+      "replacement": "[REDACTED_LOCAL_PATH]",
+      "rule": "absolute_path"
+    },
+    {
+      "count": 1,
+      "replacement": "[REDACTED_SECRET]",
+      "rule": "secret_shaped_token"
+    },
+    {
+      "count": 1,
+      "replacement": "[REDACTED_CUSTOMER_DATA]",
+      "rule": "customer_data_shape"
+    },
+    {
+      "count": 1,
+      "replacement": "[REDACTED_LOCAL_FILE]",
+      "rule": "unrelated_local_file"
+    }
+  ],
+  "schema_version": "agent_evidence_recorder.live_envelope.v0"
+}

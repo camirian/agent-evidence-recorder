@@ -1,0 +1,80 @@
+{
+  "adversarial_corpus": "samples/adversarial-corpus.json",
+  "agent_run_receipts": {
+    "receipt_dir": "samples/agent-run-receipts",
+    "receipts": [
+      {
+        "receipt_id": "agent-run-receipt-codex",
+        "verification_status": "verified"
+      },
+      {
+        "receipt_id": "agent-run-receipt-noop",
+        "verification_status": "needs_review"
+      },
+      {
+        "receipt_id": "agent-run-receipt-unverified",
+        "verification_status": "unknown"
+      }
+    ],
+    "verified": true
+  },
+  "generated_at": "2026-05-25T00:00:00Z",
+  "pr_review_adversarial": {
+    "bundle_dir": "samples/agent_evidence-pr-review-adversarial",
+    "bundle_id": "agent_evidence-pr-review-adversarial",
+    "final_status": "needs_human_review",
+    "verified": true
+  },
+  "pr_review_bundle": {
+    "bundle_dir": "samples/agent_evidence-pr-review-sample",
+    "bundle_id": "agent_evidence-pr-review-sample",
+    "final_status": "needs_human_review",
+    "verified": true
+  },
+  "pr_review_low_risk_docs": {
+    "bundle_dir": "samples/agent_evidence-pr-review-low-risk-docs",
+    "bundle_id": "agent_evidence-pr-review-low-risk-docs",
+    "final_status": "accepted_for_review",
+    "verified": true
+  },
+  "pr_review_self_demo": {
+    "bundle_dir": "samples/agent_evidence-pr-review-self-demo",
+    "bundle_id": "agent_evidence-pr-review-self-demo",
+    "final_status": "needs_human_review",
+    "reviewer_decision": "needs_followup",
+    "verified": true
+  },
+  "runs": [
+    {
+      "final_status": "accepted",
+      "run_dir": "samples/agent_evidence-sample-run",
+      "run_id": "agent_evidence-sample-run"
+    },
+    {
+      "final_status": "rejected",
+      "run_dir": "samples/agent_evidence-sample-run-rejected",
+      "run_id": "agent_evidence-sample-run-rejected"
+    },
+    {
+      "final_status": "needs_human_review",
+      "run_dir": "samples/agent_evidence-sample-run-escalated",
+      "run_id": "agent_evidence-sample-run-escalated"
+    },
+    {
+      "final_status": "blocked",
+      "run_dir": "samples/agent_evidence-sample-run-blocked",
+      "run_id": "agent_evidence-sample-run-blocked"
+    },
+    {
+      "final_status": "needs_human_review",
+      "run_dir": "samples/agent_evidence-sample-run-vague",
+      "run_id": "agent_evidence-sample-run-vague"
+    },
+    {
+      "final_status": "blocked",
+      "run_dir": "samples/agent_evidence-sample-run-live-envelope",
+      "run_id": "agent_evidence-sample-run-live-envelope"
+    }
+  ],
+  "schema_version": "agent_evidence_recorder.public_sample.v0"
+}

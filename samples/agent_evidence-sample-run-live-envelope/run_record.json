@@ -1,0 +1,232 @@
+{
+  "adapter": "synthetic_sample",
+  "effect_boundary": {
+    "allowed_effects": [
+      "read_file",
+      "create_file",
+      "modify_file",
+      "no_op"
+    ],
+    "boundary_type": "file_scoped_synthetic",
+    "disallowed_effects": [
+      "network_call",
+      "external_api_call",
+      "deploy",
+      "publish",
+      "browser_automation",
+      "cloud_operation",
+      "hardware_access",
+      "payment"
+    ],
+    "external_effects_rollbackable": false,
+    "non_file_effects_allowed": false,
+    "observed_effects": [
+      {
+        "effect_type": "modify_file",
+        "file_scoped": true,
+        "path": "network_plan.txt",
+        "rollback_scope": "recorded_git_diff"
+      }
+    ],
+    "provider_calls_allowed": false,
+    "requested_non_file_effects": [
+      {
+        "effect_type": "network_call",
+        "reason": "input_preflight_blocked_before_provider_request",
+        "source": "live_request_envelope.json",
+        "status": "blocked"
+      }
+    ],
+    "reviewer_must_block_non_file_effects": true,
+    "rollback_scope": "recorded_git_diff_only",
+    "schema_version": "agent_evidence_recorder.effect_boundary.v0"
+  },
+  "environment_boundary": {
+    "execution": "local_synthetic_sample",
+    "external_api": "not_used",
+    "network": "not_used",
+    "provider_account": "not_required",
+    "rollback_scope": "git_tracked_files_only"
+  },
+  "execution_limits": {
+    "cost_budget": {
+      "actual": 0,
+      "maximum": 0,
+      "provider_account_required": false,
+      "unit": "synthetic_provider_tokens"
+    },
+    "external_effect_budget": "tracked_fixture_file_edit_only",
+    "network_budget": "not_allowed",
+    "timeout_seconds": 30
+  },
+  "failure_capture": {
+    "cost_budget_exceeded": false,
+    "failure_class": "input_rejected",
+    "partial_output_observed": false,
+    "provider_refusal_observed": true,
+    "recorded_evidence": [
+      "commands.log",
+      "sample_verification.json",
+      "policy_gate_report.json",
+      "review_packet.md"
+    ],
+    "timeout_observed": false,
+    "verifier_failure_observed": false
+  },
+  "final_status": "blocked",
+  "generation_steps": [
+    {
+      "status": "completed",
+      "step": "create_synthetic_fixture"
+    },
+    {
+      "mode": "live_envelope",
+      "step": "apply_modeled_code_edit"
+    },
+    {
+      "status": "completed",
+      "step": "write_public_safe_artifacts"
+    }
+  ],
+  "input_artifacts": [
+    {
+      "artifact_role": "target_fixture_input",
+      "relative_path": "samples/sample-target-repo/README.md"
+    },
+    {
+      "artifact_role": "target_policy_fixture",
+      "relative_path": "samples/sample-target-repo/agent_policy.json"
+    },
+    {
+      "artifact_role": "target_fixture_source",
+      "relative_path": "samples/sample-target-repo/calculator.py"
+    },
+    {
+      "artifact_role": "target_effect_fixture",
+      "relative_path": "samples/sample-target-repo/network_plan.txt"
+    },
+    {
+      "artifact_role": "target_fixture_verifier",
+      "relative_path": "samples/sample-target-repo/test_calculator.py"
+    }
+  ],
+  "intent": "Model a live-envelope preflight request with input rejection, redaction metadata, and no provider call.",
+  "live_envelope": {
+    "provider_rejection_record": "samples/agent_evidence-sample-run-live-envelope/provider_request_rejection_record.json",
+    "provider_request_sent": false,
+    "redaction_count": 4,
+    "redaction_report": "samples/agent_evidence-sample-run-live-envelope/live_redaction_report.json",
+    "redaction_rules": [
+      "absolute_path",
+      "secret_shaped_token",
+      "customer_data_shape",
+      "unrelated_local_file"
+    ],
+    "request_envelope": "samples/agent_evidence-sample-run-live-envelope/live_request_envelope.json",
+    "reviewer_outcome_required": true
+  },
+  "output_artifacts": [
+    {
+      "artifact_role": "run_record",
+      "relative_path": "samples/agent_evidence-sample-run-live-envelope/run_record.json"
+    },
+    {
+      "artifact_role": "event_trace",
+      "relative_path": "samples/agent_evidence-sample-run-live-envelope/trace.jsonl"
+    },
+    {
+      "artifact_role": "command_summary",
+      "relative_path": "samples/agent_evidence-sample-run-live-envelope/commands.log"
+    },
+    {
+      "artifact_role": "modeled_diff",
+      "relative_path": "samples/agent_evidence-sample-run-live-envelope/git.diff"
+    },
+    {
+      "artifact_role": "verification_output",
+      "relative_path": "samples/agent_evidence-sample-run-live-envelope/sample_verification.json"
+    },
+    {
+      "artifact_role": "policy_boundary",
+      "relative_path": "samples/agent_evidence-sample-run-live-envelope/sample_policy.json"
+    },
+    {
+      "artifact_role": "policy_gate_report",
+      "relative_path": "samples/agent_evidence-sample-run-live-envelope/policy_gate_report.json"
+    },
+    {
+      "artifact_role": "human_escalation_record",
+      "relative_path": "samples/agent_evidence-sample-run-live-envelope/human_escalation_record.json"
+    },
+    {
+      "artifact_role": "loop_stage_summary",
+      "relative_path": "samples/agent_evidence-sample-run-live-envelope/loop_stage_summary.json"
+    },
+    {
+      "artifact_role": "kill_switch_boundary",
+      "relative_path": "samples/agent_evidence-sample-run-live-envelope/kill_switch_boundary.md"
+    },
+    {
+      "artifact_role": "evidence_packet",
+      "relative_path": "samples/agent_evidence-sample-run-live-envelope/evidence_packet.md"
+    },
+    {
+      "artifact_role": "review_packet",
+      "relative_path": "samples/agent_evidence-sample-run-live-envelope/review_packet.md"
+    },
+    {
+      "artifact_role": "rollback_script",
+      "relative_path": "samples/agent_evidence-sample-run-live-envelope/rollback.sh"
+    },
+    {
+      "artifact_role": "live_request_envelope",
+      "relative_path": "samples/agent_evidence-sample-run-live-envelope/live_request_envelope.json"
+    },
+    {
+      "artifact_role": "live_redaction_report",
+      "relative_path": "samples/agent_evidence-sample-run-live-envelope/live_redaction_report.json"
+    },
+    {
+      "artifact_role": "provider_request_rejection_record",
+      "relative_path": "samples/agent_evidence-sample-run-live-envelope/provider_request_rejection_record.json"
+    }
+  ],
+  "producer": "agent_evidence_recorder.sample",
+  "provenance": "synthetic_live_envelope",
+  "replay_command": "python3 -m agent_evidence_recorder.sample && python3 -m agent_evidence_recorder.verify_sample",
+  "roots": {
+    "public_example_export": "samples/agent_evidence-sample-run-live-envelope",
+    "run_store": ".afr/runs/<run_id>",
+    "target_repo": "sample-target-repo"
+  },
+  "run_id": "agent_evidence-sample-run-live-envelope",
+  "schema_version": "agent_evidence_recorder.public_sample.v0",
+  "tool_or_model_steps": [
+    {
+      "adapter": "synthetic_sample",
+      "changed_files": [
+        "network_plan.txt"
+      ],
+      "live_model_used": false,
+      "step": "modeled_agent_edit"
+    },
+    {
+      "command": [
+        "agent_evidence-recorder",
+        "simulate-live-envelope-preflight"
+      ],
+      "cwd": "samples",
+      "returncode": 0,
+      "stderr_summary": "",
+      "stdout_summary": "provider request blocked during preflight"
+    }
+  ],
+  "verification_notes": {
+    "human_escalation_record": "samples/agent_evidence-sample-run-live-envelope/human_escalation_record.json",
+    "policy_gate_report": "samples/agent_evidence-sample-run-live-envelope/policy_gate_report.json",
+    "public_surface": "relative_paths_only",
+    "residual_risk": "sample_does_not_wrap_live_agents",
+    "sample_verification": "samples/agent_evidence-sample-run-live-envelope/sample_verification.json"
+  },
+  "workflow_type": "live_preflight_envelope"
+}

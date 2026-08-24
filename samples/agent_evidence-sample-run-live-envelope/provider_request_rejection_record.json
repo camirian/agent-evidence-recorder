@@ -1,0 +1,16 @@
+{
+  "failure_class": "input_rejected",
+  "final_status": "blocked",
+  "provider_request_sent": false,
+  "provider_request_status": "rejected",
+  "redaction_count": 4,
+  "rejection_reasons": [
+    {
+      "field": "disallowed_input_refs",
+      "reason": "disallowed_input_detected"
+    }
+  ],
+  "request_envelope": "samples/agent_evidence-sample-run-live-envelope/live_request_envelope.json",
+  "run_id": "agent_evidence-sample-run-live-envelope",
+  "schema_version": "agent_evidence_recorder.live_envelope.v0"
+}

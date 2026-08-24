@@ -1,0 +1,49 @@
+{
+  "artifact_manifest_ref": "agent-run-receipt.noop.artifact_manifest.json",
+  "artifacts_created": [],
+  "commands_run": [
+    "git status --short",
+    "rg task docs"
+  ],
+  "completion_tokens_estimated": 2000,
+  "cost_confidence": "low",
+  "cost_source": "static_fixture_estimate",
+  "estimated_cost_usd": 0.05,
+  "evidence_packet_ref": "agent-run-receipt.noop.evidence_packet.md",
+  "files_changed": [],
+  "model": "synthetic-model-estimate",
+  "next_run_recommendations": [
+    "Stop the run earlier when no bounded output is forming.",
+    "Define one file ownership target before spending more tokens."
+  ],
+  "non_claims": [
+    "not a billing ledger",
+    "not a provider usage report",
+    "not a scientific benchmark",
+    "not a compliance score",
+    "not an ROI claim",
+    "not telemetry",
+    "not a model comparison"
+  ],
+  "privacy_boundary": "public_synthetic_fixture_only",
+  "prompt_body_policy": "excluded_by_default",
+  "prompt_tokens_estimated": 7000,
+  "receipt_id": "agent-run-receipt-noop",
+  "repo": "agent_evidence-recorder-public-sample",
+  "review_packet_ref": "agent-run-receipt.noop.review_packet.md",
+  "run_id": "synthetic-agent-run-noop-001",
+  "schema_version": "agent_evidence_recorder.agent_run_receipt.v0.1",
+  "task_class": "noop_run",
+  "task_summary": "Synthetic agent run consumed tokens but produced no verified output.",
+  "tests_run": [],
+  "token_efficiency_score": 0.0,
+  "tool": "synthetic-coding-agent",
+  "total_tokens_estimated": 9000,
+  "verification_refs": [],
+  "verification_status": "needs_review",
+  "verified_output_per_1m_tokens": 0.0,
+  "waste_flags": [
+    "no_verified_change",
+    "prompt_too_broad"
+  ]
+}

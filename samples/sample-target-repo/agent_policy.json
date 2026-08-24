@@ -1,0 +1,12 @@
+{
+  "allowed_effects": [
+    "tracked_fixture_file_edit"
+  ],
+  "forbidden_effects": [
+    "network_call_plan"
+  ],
+  "human_review_paths": [
+    "agent_policy.json"
+  ],
+  "network_calls": "not_allowed"
+}

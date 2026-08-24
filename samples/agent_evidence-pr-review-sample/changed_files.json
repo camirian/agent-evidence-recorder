@@ -1,0 +1,45 @@
+{
+  "files": [
+    {
+      "additions": 5,
+      "deletions": 0,
+      "path": "README.md",
+      "risk_flags": [
+        "documentation"
+      ]
+    },
+    {
+      "additions": 12,
+      "deletions": 0,
+      "path": "docs/GITHUB_PR_REVIEW_BUNDLE.md",
+      "risk_flags": [
+        "documentation"
+      ]
+    },
+    {
+      "additions": 149,
+      "deletions": 0,
+      "path": "agent_evidence_recorder/pr_review.py",
+      "risk_flags": [
+        "source_code"
+      ]
+    },
+    {
+      "additions": 13,
+      "deletions": 1,
+      "path": "agent_evidence_recorder/__main__.py",
+      "risk_flags": [
+        "source_code"
+      ]
+    },
+    {
+      "additions": 83,
+      "deletions": 1,
+      "path": "tests/test_sample.py",
+      "risk_flags": [
+        "source_code"
+      ]
+    }
+  ],
+  "schema_version": "agent_evidence_recorder.pr_review.v0"
+}

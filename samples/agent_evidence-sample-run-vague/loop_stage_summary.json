@@ -1,0 +1,30 @@
+{
+  "final_policy_status": "needs_human_review",
+  "human_review_required": true,
+  "inputs_used": [
+    "README.md",
+    "agent_policy.json",
+    "calculator.py",
+    "network_plan.txt",
+    "test_calculator.py"
+  ],
+  "loop_stage": "decide",
+  "outputs_created": [
+    "run_record.json",
+    "trace.jsonl",
+    "commands.log",
+    "git.diff",
+    "sample_verification.json",
+    "sample_policy.json",
+    "policy_gate_report.json",
+    "human_escalation_record.json",
+    "loop_stage_summary.json",
+    "kill_switch_boundary.md",
+    "evidence_packet.md",
+    "review_packet.md",
+    "rollback.sh"
+  ],
+  "run_id": "agent_evidence-sample-run-vague",
+  "schema_version": "agent_evidence_recorder.public_sample.v0",
+  "stage_reason": "Policy or verification requires a decision before trust is granted."
+}

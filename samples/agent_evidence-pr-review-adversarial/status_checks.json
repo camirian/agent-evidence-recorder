@@ -1,0 +1,30 @@
+{
+  "checks": [
+    {
+      "conclusion": "success",
+      "name": "unit",
+      "result": "success",
+      "risk_flags": [],
+      "state": "",
+      "status": "completed",
+      "url": "https://github.com/camirian/agent_evidence-recorder/actions/runs/1"
+    },
+    {
+      "conclusion": "success",
+      "name": "lint",
+      "result": "success",
+      "risk_flags": [],
+      "state": "",
+      "status": "completed",
+      "url": "https://github.com/camirian/agent_evidence-recorder/actions/runs/2"
+    }
+  ],
+  "schema_version": "agent_evidence_recorder.pr_review.v0",
+  "summary": {
+    "results": {
+      "success": 2
+    },
+    "risk_flags": [],
+    "total": 2
+  }
+}

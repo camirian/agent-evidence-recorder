@@ -1,0 +1,8 @@
+{"adapter": "synthetic_sample", "event": "run_started", "run_id": "agent_evidence-sample-run-blocked"}
+{"event": "fixture_created", "run_id": "agent_evidence-sample-run-blocked", "target": "sample-target-repo"}
+{"changed_files": ["calculator.py", "network_plan.txt"], "event": "modeled_edit_applied", "mode": "blocked", "run_id": "agent_evidence-sample-run-blocked"}
+{"cost_budget_maximum": 0, "event": "execution_limits_recorded", "run_id": "agent_evidence-sample-run-blocked", "timeout_seconds": 30}
+{"event": "failure_capture_recorded", "failure_class": "forbidden_effect_requested", "run_id": "agent_evidence-sample-run-blocked"}
+{"event": "verification_completed", "final_status": "blocked", "run_id": "agent_evidence-sample-run-blocked"}
+{"event": "policy_gate_completed", "final_status": "blocked", "run_id": "agent_evidence-sample-run-blocked"}
+{"artifacts": ["run_record.json", "trace.jsonl", "commands.log", "git.diff", "sample_verification.json", "sample_policy.json", "policy_gate_report.json", "human_escalation_record.json", "loop_stage_summary.json", "kill_switch_boundary.md", "evidence_packet.md", "review_packet.md", "rollback.sh"], "event": "artifacts_written", "run_id": "agent_evidence-sample-run-blocked"}

@@ -1,0 +1,20 @@
+{
+  "entries": [
+    {
+      "artifact_role": "evidence_packet",
+      "classification": "synthetic_fixture",
+      "relative_path": "agent-run-receipt.codex.evidence_packet.md"
+    },
+    {
+      "artifact_role": "review_packet",
+      "classification": "synthetic_fixture",
+      "relative_path": "agent-run-receipt.codex.review_packet.md"
+    },
+    {
+      "artifact_role": "verification_ref",
+      "classification": "synthetic_fixture",
+      "relative_path": "agent-run-receipt.codex.verification.json"
+    }
+  ],
+  "schema_version": "agent_evidence_recorder.agent_run_receipt_manifest_fixture.v0.1"
+}

@@ -1,0 +1,51 @@
+{
+  "artifact_manifest_ref": "agent-run-receipt.unverified.artifact_manifest.json",
+  "artifacts_created": [
+    "draft_receipt.json"
+  ],
+  "commands_run": [
+    "python3 -m agent_evidence_recorder.agent_run_receipt score samples/agent-run-receipts/agent-run-receipt.unverified.json"
+  ],
+  "completion_tokens_estimated": 5000,
+  "cost_confidence": "low",
+  "cost_source": "static_fixture_estimate",
+  "estimated_cost_usd": 0.11,
+  "evidence_packet_ref": "agent-run-receipt.unverified.evidence_packet.md",
+  "files_changed": [
+    "docs/draft_receipt_note.md"
+  ],
+  "model": "synthetic-model-estimate",
+  "next_run_recommendations": [
+    "Run focused verification before adding new output.",
+    "Keep unknown verification status until evidence refs exist."
+  ],
+  "non_claims": [
+    "not a billing ledger",
+    "not a provider usage report",
+    "not a scientific benchmark",
+    "not a compliance score",
+    "not an ROI claim",
+    "not telemetry",
+    "not a model comparison"
+  ],
+  "privacy_boundary": "public_synthetic_fixture_only",
+  "prompt_body_policy": "excluded_by_default",
+  "prompt_tokens_estimated": 13000,
+  "receipt_id": "agent-run-receipt-unverified",
+  "repo": "agent_evidence-recorder-public-sample",
+  "review_packet_ref": "agent-run-receipt.unverified.review_packet.md",
+  "run_id": "synthetic-agent-run-unverified-001",
+  "schema_version": "agent_evidence_recorder.agent_run_receipt.v0.1",
+  "task_class": "unverified_output",
+  "task_summary": "Synthetic agent run produced a draft artifact without completed verification.",
+  "tests_run": [],
+  "token_efficiency_score": 14.0,
+  "tool": "synthetic-coding-agent",
+  "total_tokens_estimated": 18000,
+  "verification_refs": [],
+  "verification_status": "unknown",
+  "verified_output_per_1m_tokens": 0.0,
+  "waste_flags": [
+    "missing_verification"
+  ]
+}

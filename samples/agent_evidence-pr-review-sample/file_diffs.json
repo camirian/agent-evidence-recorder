@@ -1,0 +1,100 @@
+{
+  "files": [
+    {
+      "additions": 5,
+      "changes": 5,
+      "deletions": 0,
+      "patch_excerpt": [
+        "@@ -130,6 +130,7 @@ GitHub CLI:",
+        " ```bash",
+        " agent_evidence-recorder pr-review --repo camirian/agent_evidence-recorder --pr 19",
+        "+agent_evidence-recorder verify-pr-review --bundle-dir agent_evidence-pr-review",
+        " ```"
+      ],
+      "patch_line_count": 5,
+      "patch_present": true,
+      "patch_truncated": false,
+      "path": "README.md",
+      "status": "modified"
+    },
+    {
+      "additions": 12,
+      "changes": 12,
+      "deletions": 0,
+      "patch_excerpt": [
+        "@@ -25,6 +25,14 @@ agent_evidence-pr-review/",
+        "   status_checks.json",
+        " ```",
+        "+Verify the generated bundle before reviewing it:",
+        "+",
+        "+```bash",
+        "+agent_evidence-recorder verify-pr-review --bundle-dir agent_evidence-pr-review",
+        "+```"
+      ],
+      "patch_line_count": 8,
+      "patch_present": true,
+      "patch_truncated": false,
+      "path": "docs/GITHUB_PR_REVIEW_BUNDLE.md",
+      "status": "modified"
+    },
+    {
+      "additions": 149,
+      "changes": 149,
+      "deletions": 0,
+      "patch_excerpt": [
+        "@@ -126,6 +137,20 @@ def write_pr_review_bundle(",
+        "+def verify_pr_review_bundle(bundle_dir: Path) -> dict[str, Any]:",
+        "+    checks: list[dict[str, Any]] = []",
+        "+    def add(name: str, passed: bool, detail: str = \"\") -> None:",
+        "+        checks.append({\"name\": name, \"passed\": passed, \"detail\": detail})"
+      ],
+      "patch_line_count": 5,
+      "patch_present": true,
+      "patch_truncated": false,
+      "path": "agent_evidence_recorder/pr_review.py",
+      "status": "modified"
+    },
+    {
+      "additions": 13,
+      "changes": 14,
+      "deletions": 1,
+      "patch_excerpt": [
+        "@@ -24,6 +24,11 @@ def main() -> int:",
+        "+    verify_pr_review = subcommands.add_parser(\"verify-pr-review\", help=\"verify a generated GitHub PR review bundle\")",
+        "+    verify_pr_review.add_argument(\"--bundle-dir\", default=\"agent_evidence-pr-review\")"
+      ],
+      "patch_line_count": 3,
+      "patch_present": true,
+      "patch_truncated": false,
+      "path": "agent_evidence_recorder/__main__.py",
+      "status": "modified"
+    },
+    {
+      "additions": 83,
+      "changes": 84,
+      "deletions": 1,
+      "patch_excerpt": [
+        "@@ -286,6 +286,30 @@ class PublicSampleTests(unittest.TestCase):",
+        "+    def test_verify_pr_review_bundle_accepts_generated_bundle(self) -> None:",
+        "+        report = verify_pr_review_bundle(output_dir)",
+        "+        self.assertTrue(report[\"passed\"], report)"
+      ],
+      "patch_line_count": 4,
+      "patch_present": true,
+      "patch_truncated": false,
+      "path": "tests/test_sample.py",
+      "status": "modified"
+    }
+  ],
+  "limits": {
+    "max_files": 12,
+    "max_patch_lines_per_file": 80
+  },
+  "schema_version": "agent_evidence_recorder.pr_review.v0",
+  "summary": {
+    "files_omitted": 0,
+    "files_with_patch": 5,
+    "files_without_patch": 0,
+    "patches_truncated": 0
+  }
+}

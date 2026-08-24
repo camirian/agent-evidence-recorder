@@ -1,0 +1,30 @@
+{
+  "allowed_decisions": [
+    "accept",
+    "reject",
+    "request_changes",
+    "needs_followup"
+  ],
+  "decision_prompts": [
+    "Does the PR intent match the changed files and bounded diff excerpts?",
+    "Do status checks provide enough evidence for the changed behavior?",
+    "Record the smallest defensible outcome: accept, reject, request_changes, or needs_followup."
+  ],
+  "evidence_references": [
+    "reviewer_packet.md",
+    "risk_summary.json",
+    "status_checks.json",
+    "file_diffs.json",
+    "changed_files.json",
+    "pr_metadata.json"
+  ],
+  "generated_at": "2026-06-01T05:22:00+00:00",
+  "pr_number": 40,
+  "pr_url": "https://github.com/camirian/agent_evidence-recorder/pull/40",
+  "recommended_starting_decision": "accept",
+  "repo": "camirian/agent_evidence-recorder",
+  "reviewer_decision": "",
+  "reviewer_notes": "",
+  "schema_version": "agent_evidence_recorder.pr_review.v0",
+  "status": "unrecorded"
+}

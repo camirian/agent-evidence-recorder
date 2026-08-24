@@ -1,0 +1,28 @@
+{
+  "adapter": "github_pr_review",
+  "boundary": "public GitHub PR metadata only; no local secrets or private repository contents",
+  "final_status": "needs_human_review",
+  "generated_at": "2026-06-01T05:15:00+00:00",
+  "input_artifacts": [
+    "GitHub PR metadata from gh CLI"
+  ],
+  "intent": "Review PR #39: Update",
+  "output_artifacts": [
+    "pr_metadata.json",
+    "changed_files.json",
+    "file_diffs.json",
+    "status_checks.json",
+    "risk_summary.json",
+    "review_outcome.json",
+    "review_request.md",
+    "reviewer_packet.md",
+    "commands.log",
+    "artifact_manifest.json"
+  ],
+  "provenance": "github_pr_review",
+  "schema_version": "agent_evidence_recorder.pr_review.v0",
+  "source_command": [
+    "offline-adversarial-pr-review",
+    "checks-successful-risky-surface"
+  ]
+}

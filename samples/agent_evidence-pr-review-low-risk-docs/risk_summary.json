@@ -1,0 +1,26 @@
+{
+  "additions": 3,
+  "adversarial_traps": [],
+  "changed_file_count": 1,
+  "deletions": 1,
+  "file_diff_summary": {
+    "files_omitted": 0,
+    "files_with_patch": 1,
+    "files_without_patch": 0,
+    "patches_truncated": 0
+  },
+  "recommended_action": "inspect reviewer_packet.md before trusting this PR",
+  "reported_changed_file_count": 1,
+  "review_decision": "",
+  "risk_flags": [
+    "documentation"
+  ],
+  "risk_level": "low",
+  "risk_reasons": [],
+  "schema_version": "agent_evidence_recorder.pr_review.v0",
+  "status_check_count": 1,
+  "status_check_results": {
+    "success": 1
+  },
+  "status_check_risk_flags": []
+}

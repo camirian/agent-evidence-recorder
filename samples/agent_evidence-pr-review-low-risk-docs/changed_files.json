@@ -1,0 +1,13 @@
+{
+  "files": [
+    {
+      "additions": 3,
+      "deletions": 1,
+      "path": "QUICKSTART.md",
+      "risk_flags": [
+        "documentation"
+      ]
+    }
+  ],
+  "schema_version": "agent_evidence_recorder.pr_review.v0"
+}

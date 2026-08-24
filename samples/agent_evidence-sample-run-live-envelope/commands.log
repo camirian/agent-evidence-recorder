@@ -1,0 +1,14 @@
+{
+  "commands": [
+    {
+      "command": [
+        "agent_evidence-recorder",
+        "simulate-live-envelope-preflight"
+      ],
+      "cwd": "samples",
+      "returncode": 0,
+      "stderr_summary": "",
+      "stdout_summary": "provider request blocked during preflight"
+    }
+  ]
+}

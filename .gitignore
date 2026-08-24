@@ -1,0 +1,18 @@
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.coverage
+dist/
+build/
+*.egg-info/
+*-vault/
+# Original private planning doc at the repo root stays ignored.
+# The canonical tracked plan is docs/MASTER_PLAN.md (anchor so it is not ignored).
+/MASTER_PLAN.md
+local-artifacts/
+agent_evidence-pr-review/
+BUILD_V0.md
+PLAN_30DAY.md
+DISCOVERY.md
+DISCOVERY_LOG.md

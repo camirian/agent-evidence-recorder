@@ -1,0 +1,32 @@
+{
+  "files": [
+    {
+      "additions": 3,
+      "changes": 4,
+      "deletions": 1,
+      "patch_excerpt": [
+        "@@ -81,7 +81,9 @@ This bundle exercises the GitHub PR review workflow.",
+        "-The generated PR-review fixture does not require GitHub CLI authentication.",
+        "+The generated PR-review fixtures do not require GitHub CLI authentication.",
+        "+They are deterministic and public-safe.",
+        "+Use the low-risk docs fixture to compare an accept-starting packet."
+      ],
+      "patch_line_count": 5,
+      "patch_present": true,
+      "patch_truncated": false,
+      "path": "QUICKSTART.md",
+      "status": "modified"
+    }
+  ],
+  "limits": {
+    "max_files": 12,
+    "max_patch_lines_per_file": 80
+  },
+  "schema_version": "agent_evidence_recorder.pr_review.v0",
+  "summary": {
+    "files_omitted": 0,
+    "files_with_patch": 1,
+    "files_without_patch": 0,
+    "patches_truncated": 0
+  }
+}

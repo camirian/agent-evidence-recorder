@@ -1,0 +1,8 @@
+{"adapter": "synthetic_sample", "event": "run_started", "run_id": "agent_evidence-sample-run-vague"}
+{"event": "fixture_created", "run_id": "agent_evidence-sample-run-vague", "target": "sample-target-repo"}
+{"changed_files": ["calculator.py", "README.md"], "event": "modeled_edit_applied", "mode": "vague", "run_id": "agent_evidence-sample-run-vague"}
+{"cost_budget_maximum": 0, "event": "execution_limits_recorded", "run_id": "agent_evidence-sample-run-vague", "timeout_seconds": 30}
+{"event": "failure_capture_recorded", "failure_class": "review_judgment_blocked", "run_id": "agent_evidence-sample-run-vague"}
+{"event": "verification_completed", "final_status": "needs_human_review", "run_id": "agent_evidence-sample-run-vague"}
+{"event": "policy_gate_completed", "final_status": "needs_human_review", "run_id": "agent_evidence-sample-run-vague"}
+{"artifacts": ["run_record.json", "trace.jsonl", "commands.log", "git.diff", "sample_verification.json", "sample_policy.json", "policy_gate_report.json", "human_escalation_record.json", "loop_stage_summary.json", "kill_switch_boundary.md", "evidence_packet.md", "review_packet.md", "rollback.sh"], "event": "artifacts_written", "run_id": "agent_evidence-sample-run-vague"}

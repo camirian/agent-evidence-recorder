@@ -1,0 +1,30 @@
+{
+  "files": [
+    {
+      "additions": 18,
+      "deletions": 3,
+      "path": ".github/workflows/test.yml",
+      "risk_flags": [
+        "ci_or_automation"
+      ]
+    },
+    {
+      "additions": 10,
+      "deletions": 2,
+      "path": "SECURITY.md",
+      "risk_flags": [
+        "security_or_policy",
+        "documentation"
+      ]
+    },
+    {
+      "additions": 14,
+      "deletions": 2,
+      "path": "agent_evidence_recorder/pr_review.py",
+      "risk_flags": [
+        "source_code"
+      ]
+    }
+  ],
+  "schema_version": "agent_evidence_recorder.pr_review.v0"
+}

@@ -1,0 +1,209 @@
+{
+  "adapter": "synthetic_sample",
+  "effect_boundary": {
+    "allowed_effects": [
+      "read_file",
+      "create_file",
+      "modify_file",
+      "no_op"
+    ],
+    "boundary_type": "file_scoped_synthetic",
+    "disallowed_effects": [
+      "network_call",
+      "external_api_call",
+      "deploy",
+      "publish",
+      "browser_automation",
+      "cloud_operation",
+      "hardware_access",
+      "payment"
+    ],
+    "external_effects_rollbackable": false,
+    "non_file_effects_allowed": false,
+    "observed_effects": [
+      {
+        "effect_type": "modify_file",
+        "file_scoped": true,
+        "path": "calculator.py",
+        "rollback_scope": "recorded_git_diff"
+      },
+      {
+        "effect_type": "modify_file",
+        "file_scoped": true,
+        "path": "README.md",
+        "rollback_scope": "recorded_git_diff"
+      }
+    ],
+    "provider_calls_allowed": false,
+    "requested_non_file_effects": [],
+    "reviewer_must_block_non_file_effects": true,
+    "rollback_scope": "recorded_git_diff_only",
+    "schema_version": "agent_evidence_recorder.effect_boundary.v0"
+  },
+  "environment_boundary": {
+    "execution": "local_synthetic_sample",
+    "external_api": "not_used",
+    "network": "not_used",
+    "provider_account": "not_required",
+    "rollback_scope": "git_tracked_files_only"
+  },
+  "execution_limits": {
+    "cost_budget": {
+      "actual": 0,
+      "maximum": 0,
+      "provider_account_required": false,
+      "unit": "synthetic_provider_tokens"
+    },
+    "external_effect_budget": "tracked_fixture_file_edit_only",
+    "network_budget": "not_allowed",
+    "timeout_seconds": 30
+  },
+  "failure_capture": {
+    "cost_budget_exceeded": false,
+    "failure_class": "review_judgment_blocked",
+    "partial_output_observed": false,
+    "provider_refusal_observed": false,
+    "recorded_evidence": [
+      "commands.log",
+      "sample_verification.json",
+      "policy_gate_report.json",
+      "review_packet.md"
+    ],
+    "timeout_observed": false,
+    "verifier_failure_observed": false
+  },
+  "final_status": "needs_human_review",
+  "generation_steps": [
+    {
+      "status": "completed",
+      "step": "create_synthetic_fixture"
+    },
+    {
+      "mode": "vague",
+      "step": "apply_modeled_code_edit"
+    },
+    {
+      "status": "completed",
+      "step": "write_public_safe_artifacts"
+    }
+  ],
+  "input_artifacts": [
+    {
+      "artifact_role": "target_fixture_input",
+      "relative_path": "samples/sample-target-repo/README.md"
+    },
+    {
+      "artifact_role": "target_policy_fixture",
+      "relative_path": "samples/sample-target-repo/agent_policy.json"
+    },
+    {
+      "artifact_role": "target_fixture_source",
+      "relative_path": "samples/sample-target-repo/calculator.py"
+    },
+    {
+      "artifact_role": "target_effect_fixture",
+      "relative_path": "samples/sample-target-repo/network_plan.txt"
+    },
+    {
+      "artifact_role": "target_fixture_verifier",
+      "relative_path": "samples/sample-target-repo/test_calculator.py"
+    }
+  ],
+  "intent": "Improve the sample target repo.",
+  "output_artifacts": [
+    {
+      "artifact_role": "run_record",
+      "relative_path": "samples/agent_evidence-sample-run-vague/run_record.json"
+    },
+    {
+      "artifact_role": "event_trace",
+      "relative_path": "samples/agent_evidence-sample-run-vague/trace.jsonl"
+    },
+    {
+      "artifact_role": "command_summary",
+      "relative_path": "samples/agent_evidence-sample-run-vague/commands.log"
+    },
+    {
+      "artifact_role": "modeled_diff",
+      "relative_path": "samples/agent_evidence-sample-run-vague/git.diff"
+    },
+    {
+      "artifact_role": "verification_output",
+      "relative_path": "samples/agent_evidence-sample-run-vague/sample_verification.json"
+    },
+    {
+      "artifact_role": "policy_boundary",
+      "relative_path": "samples/agent_evidence-sample-run-vague/sample_policy.json"
+    },
+    {
+      "artifact_role": "policy_gate_report",
+      "relative_path": "samples/agent_evidence-sample-run-vague/policy_gate_report.json"
+    },
+    {
+      "artifact_role": "human_escalation_record",
+      "relative_path": "samples/agent_evidence-sample-run-vague/human_escalation_record.json"
+    },
+    {
+      "artifact_role": "loop_stage_summary",
+      "relative_path": "samples/agent_evidence-sample-run-vague/loop_stage_summary.json"
+    },
+    {
+      "artifact_role": "kill_switch_boundary",
+      "relative_path": "samples/agent_evidence-sample-run-vague/kill_switch_boundary.md"
+    },
+    {
+      "artifact_role": "evidence_packet",
+      "relative_path": "samples/agent_evidence-sample-run-vague/evidence_packet.md"
+    },
+    {
+      "artifact_role": "review_packet",
+      "relative_path": "samples/agent_evidence-sample-run-vague/review_packet.md"
+    },
+    {
+      "artifact_role": "rollback_script",
+      "relative_path": "samples/agent_evidence-sample-run-vague/rollback.sh"
+    }
+  ],
+  "producer": "agent_evidence_recorder.sample",
+  "provenance": "synthetic_sample",
+  "replay_command": "python3 -m agent_evidence_recorder.sample && python3 -m agent_evidence_recorder.verify_sample",
+  "roots": {
+    "public_example_export": "samples/agent_evidence-sample-run-vague",
+    "run_store": ".afr/runs/<run_id>",
+    "target_repo": "sample-target-repo"
+  },
+  "run_id": "agent_evidence-sample-run-vague",
+  "schema_version": "agent_evidence_recorder.public_sample.v0",
+  "tool_or_model_steps": [
+    {
+      "adapter": "synthetic_sample",
+      "changed_files": [
+        "calculator.py",
+        "README.md"
+      ],
+      "live_model_used": false,
+      "step": "modeled_agent_edit"
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "-m",
+        "unittest",
+        "test_calculator.py"
+      ],
+      "cwd": "sample-target-repo",
+      "returncode": 0,
+      "stderr_summary": "",
+      "stdout_summary": "1 test passed"
+    }
+  ],
+  "verification_notes": {
+    "human_escalation_record": "samples/agent_evidence-sample-run-vague/human_escalation_record.json",
+    "policy_gate_report": "samples/agent_evidence-sample-run-vague/policy_gate_report.json",
+    "public_surface": "relative_paths_only",
+    "residual_risk": "sample_does_not_wrap_live_agents",
+    "sample_verification": "samples/agent_evidence-sample-run-vague/sample_verification.json"
+  },
+  "workflow_type": "coding_agent_run"
+}

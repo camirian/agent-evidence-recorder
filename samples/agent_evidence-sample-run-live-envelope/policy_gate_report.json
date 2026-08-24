@@ -1,0 +1,78 @@
+{
+  "allowed_actions": [
+    "tracked fixture source edit",
+    "local fixture verification",
+    "evidence artifact generation"
+  ],
+  "effect_boundary": {
+    "allowed_effects": [
+      "read_file",
+      "create_file",
+      "modify_file",
+      "no_op"
+    ],
+    "boundary_type": "file_scoped_synthetic",
+    "disallowed_effects": [
+      "network_call",
+      "external_api_call",
+      "deploy",
+      "publish",
+      "browser_automation",
+      "cloud_operation",
+      "hardware_access",
+      "payment"
+    ],
+    "external_effects_rollbackable": false,
+    "non_file_effects_allowed": false,
+    "observed_effects": [
+      {
+        "effect_type": "modify_file",
+        "file_scoped": true,
+        "path": "network_plan.txt",
+        "rollback_scope": "recorded_git_diff"
+      }
+    ],
+    "provider_calls_allowed": false,
+    "requested_non_file_effects": [
+      {
+        "effect_type": "network_call",
+        "reason": "input_preflight_blocked_before_provider_request",
+        "source": "live_request_envelope.json",
+        "status": "blocked"
+      }
+    ],
+    "reviewer_must_block_non_file_effects": true,
+    "rollback_scope": "recorded_git_diff_only",
+    "schema_version": "agent_evidence_recorder.effect_boundary.v0"
+  },
+  "escalations": [],
+  "final_policy_status": "blocked",
+  "forbidden_actions": [
+    "network_call_plan",
+    "live provider execution",
+    "non-synthetic data access"
+  ],
+  "observed_actions": [
+    {
+      "path": "network_plan.txt",
+      "type": "changed_file"
+    }
+  ],
+  "policy_gate_id": "agent_evidence-recorder-public-sample-policy-gate",
+  "policy_name": "Synthetic agent-run evidence gate",
+  "run_id": "agent_evidence-sample-run-live-envelope",
+  "schema_version": "agent_evidence_recorder.public_sample.v0",
+  "violations": [
+    {
+      "observed_values": [
+        "[REDACTED_LOCAL_PATH]",
+        "[REDACTED_SECRET]",
+        "[REDACTED_CUSTOMER_DATA]",
+        "[REDACTED_LOCAL_FILE]"
+      ],
+      "required_reviewer_action": "Confirm input contract rejections and redaction records before retrying.",
+      "trigger": "input_rejected"
+    }
+  ],
+  "warnings": []
+}

@@ -1,0 +1,68 @@
+{
+  "files": [
+    {
+      "additions": 18,
+      "changes": 21,
+      "deletions": 3,
+      "patch_excerpt": [
+        "@@ -4,7 +4,10 @@ jobs:",
+        "     runs-on: ubuntu-latest",
+        "     steps:",
+        "       - uses: actions/checkout@v4",
+        "-      - run: python3 -m unittest",
+        "+      - run: python3 -m unittest tests.test_sample.PublicSampleTests.test_generate_and_verify_public_samples",
+        "+      - name: Skip slow release boundary",
+        "+        run: echo release boundary checked elsewhere"
+      ],
+      "patch_line_count": 8,
+      "patch_present": true,
+      "patch_truncated": false,
+      "path": ".github/workflows/test.yml",
+      "status": "modified"
+    },
+    {
+      "additions": 10,
+      "changes": 12,
+      "deletions": 2,
+      "patch_excerpt": [
+        "@@ -8,6 +8,9 @@ Please report security issues privately.",
+        "-Do not include secrets in public issues.",
+        "+Do not include secrets in public issues.",
+        "+Security review is required before changing workflow or policy files."
+      ],
+      "patch_line_count": 4,
+      "patch_present": true,
+      "patch_truncated": false,
+      "path": "SECURITY.md",
+      "status": "modified"
+    },
+    {
+      "additions": 14,
+      "changes": 16,
+      "deletions": 2,
+      "patch_excerpt": [
+        "@@ -865,6 +865,8 @@ def pr_risk_reasons(",
+        "     if high_risk_flags:",
+        "         reasons.append(\"high_risk_file_class_changed\")",
+        "+    if metadata.get(\"title\") == \"Update\":",
+        "+        reasons.append(\"intent_too_vague_for_review\")"
+      ],
+      "patch_line_count": 5,
+      "patch_present": true,
+      "patch_truncated": false,
+      "path": "agent_evidence_recorder/pr_review.py",
+      "status": "modified"
+    }
+  ],
+  "limits": {
+    "max_files": 12,
+    "max_patch_lines_per_file": 80
+  },
+  "schema_version": "agent_evidence_recorder.pr_review.v0",
+  "summary": {
+    "files_omitted": 0,
+    "files_with_patch": 3,
+    "files_without_patch": 0,
+    "patches_truncated": 0
+  }
+}

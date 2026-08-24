@@ -1,0 +1,31 @@
+{
+  "allowed_decisions": [
+    "accept",
+    "reject",
+    "request_changes",
+    "needs_followup"
+  ],
+  "decision_prompts": [
+    "Does the PR intent match the changed files and bounded diff excerpts?",
+    "Do status checks provide enough evidence for the changed behavior?",
+    "Resolve status_checks_missing: require a human decision because no check evidence was reported.",
+    "Record the smallest defensible outcome: accept, reject, request_changes, or needs_followup."
+  ],
+  "evidence_references": [
+    "reviewer_packet.md",
+    "risk_summary.json",
+    "status_checks.json",
+    "file_diffs.json",
+    "changed_files.json",
+    "pr_metadata.json"
+  ],
+  "generated_at": "2026-06-01T01:30:00+00:00",
+  "pr_number": 32,
+  "pr_url": "https://github.com/camirian/agent_evidence-recorder/pull/32",
+  "recommended_starting_decision": "needs_followup",
+  "repo": "camirian/agent_evidence-recorder",
+  "reviewer_decision": "needs_followup",
+  "reviewer_notes": "Self-demo outcome for PR #32: the bundle is inspectable offline and the recorded outcome verifier works, but missing status-check evidence means the defensible disposition is needs_followup rather than acceptance.",
+  "schema_version": "agent_evidence_recorder.pr_review.v0",
+  "status": "unrecorded"
+}
