@@ -13,7 +13,7 @@ jobs:
   commit-provenance:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0
       - name: Check commit identities and co-author trailers
