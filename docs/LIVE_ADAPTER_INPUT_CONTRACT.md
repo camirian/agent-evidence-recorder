@@ -2,8 +2,9 @@
 
 This contract defines the input boundary required before any future live
 adapter code. It is not an adapter implementation and does not approve live
-provider calls. The current repository remains synthetic-only plus public
-GitHub PR metadata bundles.
+provider calls. The repository also has a GitHub PR bundle command that uses
+the caller's current `gh` identity and may fetch private PR data. Such bundles
+are not automatically public-safe and are not allowed live-adapter inputs.
 
 ## Purpose
 
@@ -42,7 +43,11 @@ Allowed references are:
 - relative paths under the declared working root
 - public URLs that are captured as metadata, not as secret-bearing sessions
 - synthetic fixture IDs already tracked in this repository
-- public GitHub PR metadata already allowed by the PR-review contract
+
+The PR-review bundle as a whole is not an allowed input reference. A future
+adapter may accept a separately selected public URL or synthetic fixture ID
+only when it meets the rules above; it must not ingest a PR-review bundle or
+infer that bundle contents are public-safe.
 
 Relative paths must stay relative in exported evidence. Public URLs must not
 carry credentials, session identifiers, or private organization identifiers.

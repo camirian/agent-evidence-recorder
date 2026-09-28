@@ -109,7 +109,7 @@ def main() -> int:
     ingest_session_cmd.add_argument(
         "--redact",
         action="store_true",
-        help="omit free text (intent/commands/paths) for privacy-safe sharing",
+        help="omit intent, command, and path fields; other metadata may remain",
     )
     fleet_cmd = subcommands.add_parser(
         "fleet",
@@ -123,7 +123,7 @@ def main() -> int:
     fleet_cmd.add_argument(
         "--since-hours", type=float, default=24.0, help="only runs touched within this many hours"
     )
-    fleet_cmd.add_argument("--redact", action="store_true", help="mask repo/branch/intent for sharing")
+    fleet_cmd.add_argument("--redact", action="store_true", help="mask selected fields in the text board; --json still emits raw records")
     fleet_cmd.add_argument("--json", action="store_true", help="emit raw JSON instead of the board")
     args = parser.parse_args()
 

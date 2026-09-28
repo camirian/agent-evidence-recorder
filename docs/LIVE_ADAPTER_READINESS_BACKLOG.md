@@ -3,9 +3,9 @@
 This backlog converts the live-adapter decision gate into implementable
 prerequisite tasks. It does not approve live-adapter code.
 
-Current decision: **hold**. Agent Evidence Recorder remains synthetic-only plus
-public GitHub PR metadata bundles. No live adapter code is approved or present
-in this repository.
+Current decision: **hold**. Agent Evidence Recorder has synthetic fixtures and
+a GitHub PR bundle command that uses the caller's `gh` identity and may fetch
+private PR data. No live adapter code is approved or present in this repository.
 All slices in this backlog preserve the no-live-provider-call boundary and are
 done without adding live provider calls.
 

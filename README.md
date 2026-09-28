@@ -89,6 +89,7 @@ its contract.
 
 ## Documentation map
 
+- [Architecture and data boundaries](docs/ARCHITECTURE.md)
 - [PR review contract](docs/PR_REVIEW_CONTRACT_V0_2.md)
 - [Live adapter decision gate](docs/LIVE_ADAPTER_BOUNDARY.md)
 - [Live adapter readiness backlog](docs/LIVE_ADAPTER_READINESS_BACKLOG.md)

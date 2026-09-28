@@ -640,6 +640,43 @@ class PublicSampleTests(unittest.TestCase):
         self.assertIn("Recommended starting decision: `accept`", review_request)
         self.assertIn("review_outcome.json", review_request)
 
+    def test_pr_review_manifest_classification_is_caller_scoped(self) -> None:
+        metadata = {
+            "number": 22,
+            "title": "Synthetic metadata",
+            "url": "https://github.com/example/repo/pull/22",
+            "state": "OPEN",
+            "author": {"login": "example"},
+            "baseRefName": "main",
+            "headRefName": "docs/privacy-boundary",
+            "changedFiles": 1,
+            "additions": 1,
+            "deletions": 0,
+            "reviewDecision": "",
+            "createdAt": "2026-05-31T18:00:00Z",
+            "updatedAt": "2026-05-31T18:05:00Z",
+            "body": "Synthetic PR body",
+            "files": [{"path": "README.md", "additions": 1, "deletions": 0}],
+            "commits": [{"oid": "abc"}],
+            "statusCheckRollup": [{"name": "test", "conclusion": "SUCCESS"}],
+        }
+        output_dir = self.temp_root / "pr-review-classification"
+        write_pr_review_bundle(
+            metadata,
+            output_dir,
+            repo="example/repo",
+            generated_at="2026-05-31T00:00:00+00:00",
+        )
+        manifest_path = output_dir / "artifact_manifest.json"
+        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+        self.assertTrue(all(entry["classification"] == "caller_scoped" for entry in manifest["artifacts"]))
+
+        manifest["artifacts"][0]["classification"] = "public_metadata"
+        manifest_path.write_text(json.dumps(manifest, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+        report = verify_pr_review_bundle(output_dir)
+        failed = {check["name"] for check in report["checks"] if not check["passed"]}
+        self.assertTrue(any(name.endswith(":classification") for name in failed), failed)
+
     def test_pr_review_bundle_surfaces_pr_specific_adversarial_traps(self) -> None:
         metadata = {
             "number": 22,
