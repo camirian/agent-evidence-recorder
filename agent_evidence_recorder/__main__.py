@@ -33,7 +33,7 @@ def main() -> int:
         "verify-sample-determinism",
         help="regenerate samples in a temp directory and compare them with tracked samples",
     )
-    pr_review = subcommands.add_parser("pr-review", help="generate a public-safe GitHub PR review bundle")
+    pr_review = subcommands.add_parser("pr-review", help="generate a caller-scoped GitHub PR review bundle")
     pr_review.add_argument("--repo", required=True, help="GitHub repo in OWNER/NAME form")
     pr_review.add_argument("--pr", required=True, type=int, help="pull request number")
     pr_review.add_argument(

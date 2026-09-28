@@ -686,7 +686,7 @@ def verify_pr_review_sample(samples: Path) -> list[dict]:
     add("adapter_truth", run_record.get("adapter") == "github_pr_review", str(run_record.get("adapter")))
     add("provenance_truth", run_record.get("provenance") == "github_pr_review", str(run_record.get("provenance")))
     add("final_status_expected", run_record.get("final_status") == "needs_human_review", str(run_record.get("final_status")))
-    add("public_boundary", "public GitHub PR metadata only" in run_record.get("boundary", ""), run_record.get("boundary", ""))
+    add("caller_accessible_pr_data_boundary", "GitHub PR data accessible to the caller's gh identity" in run_record.get("boundary", ""), run_record.get("boundary", ""))
 
     risk_summary = read_json(bundle_dir / "risk_summary.json")
     add("status_checks_missing_trap", "missing_checks_requires_review" in risk_summary.get("adversarial_traps", []), ",".join(risk_summary.get("adversarial_traps", [])))
