@@ -1,17 +1,25 @@
 # PR Review Contract v0.2
 
-This contract describes the public GitHub PR review bundle produced by
+This contract describes the GitHub PR review bundle produced by
 `agent_evidence-recorder pr-review` and by the deterministic offline fixtures under
 `samples/`.
 
 It is a review contract, not an approval contract. Passing verification means
 the bundle is internally consistent and inspectable. It does not approve the
 pull request, prove production readiness, execute CI, inspect private
-repositories, or replace a reviewer decision.
+repository source files, or replace a reviewer decision. The command does fetch PR
+metadata from repositories visible to the caller's `gh` identity, including
+private repositories when authorized.
 
 ## Boundary
 
-The bundle may use only public GitHub PR metadata:
+The command uses the caller's current `gh` CLI identity. It does not check that
+the repository is public. GitHub may return metadata and diff excerpts from a
+private repository when that identity has access. The local bundle must stay
+inside the same privacy boundary unless its contents have been reviewed and
+sanitized.
+
+The bundle may contain:
 
 - PR title, body, state, author, base branch, head branch, timestamps, URL, and
   review decision
@@ -20,9 +28,17 @@ The bundle may use only public GitHub PR metadata:
 - status-check rollup names, conclusions, states, statuses, and URLs
 - commit count
 
-The bundle must not read local repository files, fetch secrets, inspect private
-artifacts, call live agent/provider tools, run tests, approve a PR, or claim
-complete rollback.
+Every entry in `artifact_manifest.json` uses the conservative classification
+`caller_scoped`. The command cannot prove that the source PR is public, and it
+does not scan or redact bundle contents. Treat every bundle artifact as data
+within the caller's GitHub privacy boundary.
+
+The command does not check out the repository or request repository secrets,
+other private artifacts, or arbitrary source files. However, PR bodies and
+patch excerpts returned by GitHub can themselves contain private text or
+accidentally committed secrets. Bundle generation does not scan or redact
+those values. Review the output before sharing it. The command does not call
+live agent/provider tools, run tests, approve a PR, or claim complete rollback.
 
 ## Required Artifacts
 
@@ -30,17 +46,17 @@ Every generated PR review bundle must contain these files:
 
 | Artifact | Role |
 | --- | --- |
-| `artifact_manifest.json` | Hashes, byte counts, and public-metadata classification for generated artifacts. |
+| `artifact_manifest.json` | Hashes, byte counts, and data classification for generated artifacts. |
 | `changed_files.json` | Normalized GitHub changed-file metadata and file risk flags. |
 | `commands.log` | Source command provenance for the metadata capture. |
 | `file_diffs.json` | Bounded GitHub patch excerpts and diff coverage limits. |
-| `pr_metadata.json` | Normalized public PR metadata. |
+| `pr_metadata.json` | Normalized PR metadata returned by GitHub; may be private. |
 | `review_outcome.json` | Mutable reviewer worksheet for the final human decision. |
-| `review_request.md` | Short shareable critique request for a cold reviewer. |
-| `reviewer_packet.md` | Reviewer-facing decision packet and checklist. |
+| `review_request.md` | Critique request for a cold reviewer; inspect and sanitize before sharing outside the source repo's privacy boundary. |
+| `reviewer_packet.md` | Reviewer-facing decision packet and checklist; may include PR text and patch excerpts. |
 | `risk_summary.json` | Machine-readable risk flags, risk reasons, and trap classes. |
 | `run_record.json` | Bundle intent, boundary, output list, and final status. |
-| `status_checks.json` | Normalized public status-check evidence. |
+| `status_checks.json` | Normalized status-check evidence returned by GitHub; may be private. |
 
 `review_outcome.json` is intentionally mutable after review. After a reviewer
 fills it, `verify-review-outcome` allows only that artifact's manifest hash and
@@ -50,7 +66,7 @@ byte count to drift. Every other artifact must still pass bundle verification.
 
 `run_record.json` may record only these final statuses:
 
-- `accepted_for_review`: the public metadata has no detected PR review risk
+- `accepted_for_review`: the fetched metadata has no detected PR review risk
   reasons. This is still only a starting point for review.
 - `needs_human_review`: at least one risk reason holds trust for a human
   decision.
@@ -120,13 +136,13 @@ clean metadata-only review.
 
 ## Verification Contract
 
-`verify-pr-review` checks:
+`verify-pr-review` checks that the run record identifies GitHub PR data as
+accessible to the caller's `gh` identity, along with:
 
 - required artifact presence
 - JSON schema versions
 - manifest hashes and byte counts
 - run-record output coverage
-- public metadata boundary text
 - relative artifact paths
 - bounded diff limits
 - status-check summary consistency
@@ -158,10 +174,10 @@ network access:
 | `samples/agent_evidence-pr-review-self-demo/` | `needs_human_review` | `needs_followup` | A filled worksheet can record follow-up when status checks are missing. |
 | `samples/agent_evidence-pr-review-sample/` | `needs_human_review` | `needs_followup` | Generated baseline remains an unrecorded worksheet. |
 
-Use the fixture matrix for the shortest reviewer path:
+Use the fixture set below for a short offline review path:
 
 ```bash
-less docs/PR_REVIEW_FIXTURE_MATRIX.md
+sed -n '1,200p' docs/PR_REVIEW_CONTRACT_V0_2.md
 python3 -m agent_evidence_recorder inspect-pr-review --bundle-dir samples/agent_evidence-pr-review-low-risk-docs
 python3 -m agent_evidence_recorder inspect-pr-review --bundle-dir samples/agent_evidence-pr-review-adversarial
 python3 -m agent_evidence_recorder verify-review-outcome --bundle-dir samples/agent_evidence-pr-review-self-demo

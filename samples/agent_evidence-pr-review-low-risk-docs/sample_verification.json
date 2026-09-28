@@ -21,6 +21,11 @@
       "passed": true
     },
     {
+      "detail": "caller_scoped",
+      "name": "manifest:changed_files.json:classification",
+      "passed": true
+    },
+    {
       "detail": "changed_files.json",
       "name": "manifest:changed_files.json:sha256",
       "passed": true
@@ -28,6 +33,11 @@
     {
       "detail": "changed_files.json",
       "name": "manifest:changed_files.json:bytes",
+      "passed": true
+    },
+    {
+      "detail": "caller_scoped",
+      "name": "manifest:commands.log:classification",
       "passed": true
     },
     {
@@ -41,6 +51,11 @@
       "passed": true
     },
     {
+      "detail": "caller_scoped",
+      "name": "manifest:file_diffs.json:classification",
+      "passed": true
+    },
+    {
       "detail": "file_diffs.json",
       "name": "manifest:file_diffs.json:sha256",
       "passed": true
@@ -48,6 +63,11 @@
     {
       "detail": "file_diffs.json",
       "name": "manifest:file_diffs.json:bytes",
+      "passed": true
+    },
+    {
+      "detail": "caller_scoped",
+      "name": "manifest:pr_metadata.json:classification",
       "passed": true
     },
     {
@@ -61,6 +81,11 @@
       "passed": true
     },
     {
+      "detail": "caller_scoped",
+      "name": "manifest:review_outcome.json:classification",
+      "passed": true
+    },
+    {
       "detail": "review_outcome.json",
       "name": "manifest:review_outcome.json:sha256",
       "passed": true
@@ -68,6 +93,11 @@
     {
       "detail": "review_outcome.json",
       "name": "manifest:review_outcome.json:bytes",
+      "passed": true
+    },
+    {
+      "detail": "caller_scoped",
+      "name": "manifest:review_request.md:classification",
       "passed": true
     },
     {
@@ -81,6 +111,11 @@
       "passed": true
     },
     {
+      "detail": "caller_scoped",
+      "name": "manifest:reviewer_packet.md:classification",
+      "passed": true
+    },
+    {
       "detail": "reviewer_packet.md",
       "name": "manifest:reviewer_packet.md:sha256",
       "passed": true
@@ -88,6 +123,11 @@
     {
       "detail": "reviewer_packet.md",
       "name": "manifest:reviewer_packet.md:bytes",
+      "passed": true
+    },
+    {
+      "detail": "caller_scoped",
+      "name": "manifest:risk_summary.json:classification",
       "passed": true
     },
     {
@@ -101,6 +141,11 @@
       "passed": true
     },
     {
+      "detail": "caller_scoped",
+      "name": "manifest:run_record.json:classification",
+      "passed": true
+    },
+    {
       "detail": "run_record.json",
       "name": "manifest:run_record.json:sha256",
       "passed": true
@@ -108,6 +153,11 @@
     {
       "detail": "run_record.json",
       "name": "manifest:run_record.json:bytes",
+      "passed": true
+    },
+    {
+      "detail": "caller_scoped",
+      "name": "manifest:status_checks.json:classification",
       "passed": true
     },
     {
@@ -136,8 +186,8 @@
       "passed": true
     },
     {
-      "detail": "public GitHub PR metadata only; no local secrets or private repository contents",
-      "name": "run_record_boundary_public_metadata",
+      "detail": "GitHub PR data accessible to the caller's gh identity; may include private PR content; bundle is not scanned or redacted",
+      "name": "run_record_boundary_caller_accessible_data",
       "passed": true
     },
     {
@@ -152,7 +202,7 @@
     },
     {
       "detail": "",
-      "name": "pr_metadata_public_boundary",
+      "name": "pr_metadata_source_identity_fields",
       "passed": true
     },
     {

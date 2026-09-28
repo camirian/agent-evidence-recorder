@@ -8,8 +8,8 @@ URL: https://github.com/camirian/agent_evidence-recorder/pull/32
 - `reviewer_packet.md` - one-page review queue item
 - `review_outcome.json` - unrecorded outcome worksheet
 - `risk_summary.json` - machine-readable risk reasons and trap classes
-- `file_diffs.json` - bounded public diff excerpts
-- `status_checks.json` - public status-check metadata
+- `file_diffs.json` - bounded GitHub-reported diff excerpts
+- `status_checks.json` - GitHub-reported status-check metadata
 
 ## Question To Answer
 

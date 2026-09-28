@@ -1,4 +1,4 @@
-"""Generate a public-safe reviewer packet for a GitHub pull request."""
+"""Generate a reviewer packet from GitHub pull-request data accessible to gh."""
 
 from __future__ import annotations
 
@@ -34,6 +34,7 @@ LARGE_CHANGE_FILE_COUNT = 20
 LARGE_CHANGE_LINE_COUNT = 500
 MAX_DIFF_FILES = 12
 MAX_PATCH_LINES_PER_FILE = 80
+PR_REVIEW_ARTIFACT_CLASSIFICATION = "caller_scoped"
 
 
 class PrReviewError(RuntimeError):
@@ -181,7 +182,7 @@ def verify_pr_review_bundle(bundle_dir: Path) -> dict[str, Any]:
         verify_run_record(run_record, add)
     if pr_metadata:
         add("pr_metadata_schema", pr_metadata.get("schema_version") == SCHEMA_VERSION, pr_metadata.get("schema_version", ""))
-        add("pr_metadata_public_boundary", bool(pr_metadata.get("repo") and pr_metadata.get("number")), "")
+        add("pr_metadata_source_identity_fields", bool(pr_metadata.get("repo") and pr_metadata.get("number")), "")
     if changed_files:
         verify_changed_files(changed_files, add)
     if file_diffs:
@@ -513,6 +514,11 @@ def verify_manifest(bundle_dir: Path, manifest: dict[str, Any], add: Any) -> Non
         if not path.is_file():
             add(f"manifest:{relative_path}:file_present", False, relative_path)
             continue
+        add(
+            f"manifest:{relative_path}:classification",
+            artifact.get("classification") == PR_REVIEW_ARTIFACT_CLASSIFICATION,
+            artifact.get("classification", ""),
+        )
         add(f"manifest:{relative_path}:sha256", sha256_file(path) == artifact.get("sha256"), relative_path)
         add(f"manifest:{relative_path}:bytes", path.stat().st_size == artifact.get("bytes"), relative_path)
 
@@ -522,7 +528,7 @@ def verify_run_record(run_record: dict[str, Any], add: Any) -> None:
     add("run_record_adapter", run_record.get("adapter") == "github_pr_review", run_record.get("adapter", ""))
     outputs = set(run_record.get("output_artifacts") or [])
     add("run_record_outputs_required_artifacts", PR_REVIEW_RUN_OUTPUT_ARTIFACTS <= outputs, ",".join(sorted(PR_REVIEW_RUN_OUTPUT_ARTIFACTS - outputs)))
-    add("run_record_boundary_public_metadata", "public GitHub PR metadata only" in run_record.get("boundary", ""), run_record.get("boundary", ""))
+    add("run_record_boundary_caller_accessible_data", "GitHub PR data accessible to the caller's gh identity" in run_record.get("boundary", ""), run_record.get("boundary", ""))
     add("run_record_final_status_allowed", run_record.get("final_status") in {"accepted_for_review", "needs_human_review"}, run_record.get("final_status", ""))
 
 
@@ -836,7 +842,7 @@ def build_run_record(
             "commands.log",
             "artifact_manifest.json",
         ],
-        "boundary": "public GitHub PR metadata only; no local secrets or private repository contents",
+        "boundary": "GitHub PR data accessible to the caller's gh identity; may include private PR content; bundle is not scanned or redacted",
         "final_status": "needs_human_review"
         if risk_summary["risk_level"] == "needs_review"
         else "accepted_for_review",
@@ -852,7 +858,7 @@ def build_manifest(output_dir: Path, artifact_names: Any, generated_at: str) -> 
                 "relative_path": name,
                 "sha256": sha256_file(path),
                 "bytes": path.stat().st_size,
-                "classification": "public_metadata",
+                "classification": PR_REVIEW_ARTIFACT_CLASSIFICATION,
             }
         )
     return {"schema_version": SCHEMA_VERSION, "generated_at": generated_at, "artifacts": artifacts}
@@ -877,8 +883,8 @@ def render_review_request(
             "- `reviewer_packet.md` - one-page review queue item",
             "- `review_outcome.json` - unrecorded outcome worksheet",
             "- `risk_summary.json` - machine-readable risk reasons and trap classes",
-            "- `file_diffs.json` - bounded public diff excerpts",
-            "- `status_checks.json` - public status-check metadata",
+            "- `file_diffs.json` - bounded GitHub-reported diff excerpts",
+            "- `status_checks.json` - GitHub-reported status-check metadata",
             "",
             "## Question To Answer",
             "",
