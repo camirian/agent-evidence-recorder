@@ -2,12 +2,15 @@
 
 This document is the go/no-go gate for any future live-adapter work in
 Agent Evidence Recorder. It defines the minimum conditions that must be true before
-the repository can move from deterministic synthetic/public-metadata fixtures
-to live agent or provider execution.
+the repository can move from synthetic fixtures and GitHub PR data capture to
+live agent or provider execution.
 
-The current repository remains synthetic-only plus public GitHub PR metadata
-bundles. No live adapter code exists in this repository. This file is a
-decision gate, not an implementation announcement.
+The repository contains synthetic fixtures and a GitHub PR bundle command that
+uses the caller's current `gh` identity and may fetch private PR data. Those
+bundles are not automatically public-safe.
+
+No live adapter code exists in this repository. This file is a decision gate,
+not an implementation announcement.
 
 ## Gate Decision
 
@@ -65,8 +68,10 @@ All criteria are required before implementation:
 - **Public docs:** README, QUICKSTART, roadmap, and claim-audit docs still say
   what remains out of scope.
 
-If one criterion is missing, the next slice must stay synthetic or
-public-metadata-only.
+If one criterion is missing, the next slice must stay synthetic. Any future
+non-synthetic input must individually satisfy
+`LIVE_ADAPTER_INPUT_CONTRACT.md`; a complete PR-review bundle is not an allowed
+live-adapter input.
 
 For the implementation prerequisites that keep the project inside this hold
 decision, see
@@ -238,6 +243,6 @@ This file intentionally overlaps with the current boundary language in:
 - `docs/AGENT_RUN_RECORD_SPEC.md`
 - `docs/ARTIFACT_GUIDE.md`
 
-Those docs define the present synthetic-only and public-metadata contract. This
-file only defines the decision gate for a future live-adapter slice that would
-sit beyond that contract.
+Those docs define the present no-live-provider-execution contract and the
+separate GitHub PR bundle behavior. This file only defines the decision gate
+for a future live-adapter slice that would sit beyond that contract.

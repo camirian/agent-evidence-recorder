@@ -6,10 +6,10 @@ This contract describes the GitHub PR review bundle produced by
 
 It is a review contract, not an approval contract. Passing verification means
 the bundle is internally consistent and inspectable. It does not approve the
-pull request, prove production readiness, execute CI, inspect private
-repository source files, or replace a reviewer decision. The command does fetch PR
-metadata from repositories visible to the caller's `gh` identity, including
-private repositories when authorized.
+pull request, prove production readiness, execute CI, inspect a repository's
+full source tree, or replace a reviewer decision. The command does fetch PR
+metadata and bounded changed-file patch excerpts from repositories visible to
+the caller's `gh` identity, including private repositories when authorized.
 
 ## Boundary
 
@@ -33,11 +33,12 @@ Every entry in `artifact_manifest.json` uses the conservative classification
 does not scan or redact bundle contents. Treat every bundle artifact as data
 within the caller's GitHub privacy boundary.
 
-The command does not check out the repository or request repository secrets,
-other private artifacts, or arbitrary source files. However, PR bodies and
-patch excerpts returned by GitHub can themselves contain private text or
-accidentally committed secrets. Bundle generation does not scan or redact
-those values. Review the output before sharing it. The command does not call
+The command does not clone or check out the repository, retrieve its full source
+tree, or request repository secrets or unrelated private artifacts. However,
+PR bodies and bounded patch excerpts returned by GitHub can themselves contain
+private source lines, private text, or accidentally committed secrets. Bundle
+generation does not scan or redact those values. Review the output before
+sharing it. The command does not call
 live agent/provider tools, run tests, approve a PR, or claim complete rollback.
 
 ## Required Artifacts
