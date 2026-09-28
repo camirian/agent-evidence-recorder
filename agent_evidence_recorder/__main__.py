@@ -109,7 +109,7 @@ def main() -> int:
     ingest_session_cmd.add_argument(
         "--redact",
         action="store_true",
-        help="omit intent, command, and path fields; other metadata may remain",
+        help="redact intent, commands, and files_touched; cwd, branch, PR links, and other metadata remain",
     )
     fleet_cmd = subcommands.add_parser(
         "fleet",

@@ -68,11 +68,14 @@ class IngestSessionTest(unittest.TestCase):
         self.assertEqual(rec["started_at"], "2026-06-23T01:00:00Z")
         self.assertEqual(rec["ended_at"], "2026-06-23T01:01:30Z")
 
-    def test_redact_hides_free_text(self) -> None:
+    def test_redact_hides_selected_fields_but_keeps_other_metadata(self) -> None:
         rec = ingest_session(self.path, redact=True)
         self.assertEqual(rec["intent"], "[redacted]")
         self.assertEqual(rec["commands"], "[redacted]")
         self.assertEqual(rec["files_touched"], ["[1 files]"])
+        self.assertEqual(rec["cwd"], "/work/x/repo")
+        self.assertEqual(rec["git_branch"], "main")
+        self.assertEqual(rec["pr_links"][0]["url"], "http://x/12")
         self.assertEqual(rec["tools"], {"Bash": 1, "Write": 1})  # counts still present
 
 
